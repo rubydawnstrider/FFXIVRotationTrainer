@@ -1,0 +1,20 @@
+﻿public enum JobType
+{
+    AST,
+    BLM,
+    BRD,
+    DNC,
+    DRG,
+    DRK,
+    GNB,
+    MCH,
+    MNK,
+    NIN,
+    PLD,
+    RDM,
+    SAM,
+    SCH,
+    SMN,
+    WAR,
+    WHM
+}
