@@ -1,0 +1,431 @@
+<!--?xml version="1.0" encoding="UTF-8"?-->
+<Root>
+  <Skill>
+    <Name>Keen Edge</Name>
+    <Job>GNB</Job>
+    <Level>1</Level>
+    <Description>Delivers an attack with a potency of 200.</Description>
+    <RecastTime>2.5</RecastTime>
+    <CastTime>0</CastTime>
+    <TargetType>Enemy</TargetType>
+    <IconName>Keen_Edge</IconName>
+  </Skill>
+  <Skill>
+    <Name>No Mercy</Name>
+    <Job>GNB</Job>
+    <Level>2</Level>
+    <Description>Increases damage dealt by 20%.
+Duration: 20s </Description>
+    <RecastTime>60</RecastTime>
+    <CastTime>0</CastTime>
+    <TargetType>Self</TargetType>
+    <IconName>No_Mercy</IconName>
+  </Skill>
+  <Skill>
+    <Name>Brutal Shell</Name>
+    <Job>GNB</Job>
+    <Level>4</Level>
+    <Description>Delivers an attack with a potency of 100.
+Combo Action: Keen Edge
+Combo Potency: 300
+Combo Bonus: Restores own HP
+Cure Potency: 150
+Combo Bonus: Creates a barrier which nullifies damage equaling HP restored
+Duration: 10s </Description>
+    <RecastTime>2.5</RecastTime>
+    <CastTime>0</CastTime>
+    <TargetType>Enemy</TargetType>
+	<ComboAction>Keen Edge</ComboAction>
+    <IconName>Brutal_Shell</IconName>
+  </Skill>
+  <Skill>
+    <Name>Camouflage</Name>
+    <Job>GNB</Job>
+    <Level>6</Level>
+    <Description>Increases parry rate by 50% while reducing damage taken by 10%.
+Duration: 20s </Description>
+    <RecastTime>90</RecastTime>
+    <CastTime>0</CastTime>
+    <TargetType>Self</TargetType>
+    <IconName>Camouflage</IconName>
+  </Skill>
+  <Skill>
+    <Name>Demon Slice</Name>
+    <Job>GNB</Job>
+    <Level>10</Level>
+    <Description>Delivers an attack with a potency of 150 to all nearby enemies. </Description>
+    <RecastTime>2.5</RecastTime>
+    <CastTime>0</CastTime>
+    <TargetType>Enemy</TargetType>
+    <IconName>Demon_Slice</IconName>
+  </Skill>
+  <Skill>
+    <Name>Royal Guard</Name>
+    <Job>GNB</Job>
+    <Level>10</Level>
+    <Description>Significantly increases enmity generation.
+Effect ends upon reuse. </Description>
+    <RecastTime>10</RecastTime>
+    <CastTime>0</CastTime>
+    <TargetType>Self</TargetType>
+    <IconName>Royal_Guard</IconName>
+  </Skill>
+  <Skill>
+    <Name>Lightning Shot</Name>
+    <Job>GNB</Job>
+    <Level>15</Level>
+    <Description>Delivers a ranged attack with a potency of 150.
+Additional Effect: Increased enmity </Description>
+    <RecastTime>2.5</RecastTime>
+    <CastTime>0</CastTime>
+    <TargetType>Enemy</TargetType>
+    <IconName>Lightning_Shot</IconName>
+  </Skill>
+  <Skill>
+    <Name>Danger Zone</Name>
+    <Job>GNB</Job>
+    <Level>18</Level>
+    <Description>Delivers an attack with a potency of 350.</Description>
+    <RecastTime>30</RecastTime>
+    <CastTime>0</CastTime>
+    <TargetType>Enemy</TargetType>
+    <IconName>Danger_Zone</IconName>
+  </Skill>
+  <Skill>
+    <Name>Solid Barrel</Name>
+    <Job>GNB</Job>
+    <Level>26</Level>
+    <Description>Delivers an attack with a potency of 100.
+Combo Action: Brutal Shell
+Combo Potency: 400
+Combo Bonus: Adds a Cartridge to your Powder Gauge </Description>
+    <RecastTime>2.5</RecastTime>
+    <CastTime>0</CastTime>
+    <TargetType>Enemy</TargetType>
+	<ComboAction>Brutal Shell</ComboAction>
+    <IconName>Solid_Barrel</IconName>
+  </Skill>
+  <Skill>
+    <Name>Burst Strike</Name>
+    <Job>GNB</Job>
+    <Level>30</Level>
+    <Description>Delivers an attack with a potency of 500.
+Cartridge Cost: 1 </Description>
+    <RecastTime>2.5</RecastTime>
+    <CastTime>0</CastTime>
+    <TargetType>Enemy</TargetType>
+    <IconName>Burst_Strike</IconName>
+  </Skill>
+  <Skill>
+    <Name>Nebula</Name>
+    <Job>GNB</Job>
+    <Level>38</Level>
+    <Description>Reduces damage taken by 30%.
+Duration: 15s </Description>
+    <RecastTime>120</RecastTime>
+    <CastTime>0</CastTime>
+    <TargetType>Self</TargetType>
+    <IconName>Nebula</IconName>
+  </Skill>
+  <Skill>
+    <Name>Demon Slaughter</Name>
+    <Job>GNB</Job>
+    <Level>40</Level>
+    <Description>Delivers an attack with a potency of 100 to all nearby enemies.
+Combo Action: Demon Slice
+Combo Potency: 250
+Combo Bonus: Adds a Cartridge to your Powder Gauge</Description>
+    <RecastTime>2.5</RecastTime>
+    <CastTime>0</CastTime>
+    <TargetType>Enemy</TargetType>
+	<ComboAction>Demon Slice</ComboAction>
+    <IconName>Demon_Slaughter</IconName>
+  </Skill>
+  <Skill>
+    <Name>Aurora</Name>
+    <Job>GNB</Job>
+    <Level>45</Level>
+    <Description>Grants Regen to target.
+Cure Potency: 200
+Duration: 18s </Description>
+    <RecastTime>60</RecastTime>
+    <CastTime>0</CastTime>
+    <TargetType>FriendlyOrSelf</TargetType>
+    <IconName>Aurora</IconName>
+  </Skill>
+  <Skill>
+    <Name>Superbolide</Name>
+    <Job>GNB</Job>
+    <Level>50</Level>
+    <Description>Reduces HP to 1 and renders you impervious to most attacks.
+Duration: 8s </Description>
+    <RecastTime>360</RecastTime>
+    <CastTime>0</CastTime>
+    <TargetType>Self</TargetType>
+    <IconName>Superbolide</IconName>
+  </Skill>
+  <Skill>
+    <Name>Sonic Break</Name>
+    <Job>GNB</Job>
+    <Level>54</Level>
+    <Description>Delivers an attack with a potency of 300.
+Additional Effect: Damage over time
+Potency: 90
+Duration: 30s
+This weaponskill does not share a recast timer with any other actions. </Description>
+    <RecastTime>60</RecastTime>
+    <CastTime>0</CastTime>
+    <TargetType>Enemy</TargetType>
+    <IconName>Sonic_Break</IconName>
+  </Skill>
+  <Skill>
+    <Name>Rough Divide</Name>
+    <Job>GNB</Job>
+    <Level>56</Level>
+    <Description>Delivers a jumping attack with a potency of 200.
+Maximum Charges: 2
+Cannot be executed while bound. </Description>
+    <RecastTime>30</RecastTime>
+    <CastTime>0</CastTime>
+    <TargetType>Enemy</TargetType>
+    <IconName>Rough_Divide</IconName>
+  </Skill>
+  <Skill>
+    <Name>Gnashing Fang</Name>
+    <Job>GNB</Job>
+    <Level>60</Level>
+    <Description>Delivers an attack with a potency of 450.
+Additional Effect: Grants Ready to Rip
+Duration: 10s
+Cartridge Cost: 1
+This weaponskill does not share a recast timer with any other actions. </Description>
+    <RecastTime>30</RecastTime>
+    <CastTime>0</CastTime>
+    <TargetType>Enemy</TargetType>
+    <IconName>Gnashing_Fang</IconName>
+  </Skill>
+  <Skill>
+    <Name>Savage Claw</Name>
+    <Job>GNB</Job>
+    <Level>60</Level>
+    <Description>Delivers an attack with a potency of 550.
+Combo Action: Gnashing Fang
+Combo Bonus: Grants Ready to Tear
+Duration: 10s </Description>
+    <RecastTime>2.5</RecastTime>
+    <CastTime>0</CastTime>
+    <TargetType>Enemy</TargetType>
+	<ComboAction>Gnashing Fang</ComboAction>
+    <IconName>Savage_Claw</IconName>
+  </Skill>
+  <Skill>
+    <Name>Wicked Talon</Name>
+    <Job>GNB</Job>
+    <Level>60</Level>
+    <Description>Delivers an attack with a potency of 650.
+Combo Action: Savage Claw
+Combo Bonus: Grants Ready to Gouge
+Duration: 10s </Description>
+    <RecastTime>2.5</RecastTime>
+    <CastTime>0</CastTime>
+    <TargetType>Enemy</TargetType>
+	<ComboAction>Savage Claw</ComboAction>
+    <IconName>Wicked_Talon</IconName>
+  </Skill>
+  <Skill>
+    <Name>Bow Shock</Name>
+    <Job>GNB</Job>
+    <Level>62</Level>
+    <Description>Delivers an attack with a potency of 200 to all nearby enemies.
+Additional Effect: Damage over time
+Potency: 90
+Duration: 15s</Description>
+    <RecastTime>60</RecastTime>
+    <CastTime>0</CastTime>
+    <TargetType>Enemy</TargetType>
+    <IconName>Bow_Shock</IconName>
+  </Skill>
+  <Skill>
+    <Name>Heart of Light</Name>
+    <Job>GNB</Job>
+    <Level>64</Level>
+    <Description>Reduces magic damage taken by self and nearby party members by 10%.
+Duration: 15s</Description>
+    <RecastTime>90</RecastTime>
+    <CastTime>0</CastTime>
+    <TargetType>Self</TargetType>
+    <IconName>Heart_of_Light</IconName>
+  </Skill>
+  <Skill>
+    <Name>Heart of Stone</Name>
+    <Job>GNB</Job>
+    <Level>68</Level>
+    <Description>Reduces damage taken by a party member or self by 15%.
+Duration: 7s
+Additional Effect: When targeting a party member while under the effect of Brutal Shell, that effect is also granted to the target
+Duration: 10s </Description>
+    <RecastTime>25</RecastTime>
+    <CastTime>0</CastTime>
+    <TargetType>FriendlyOrSelf</TargetType>
+    <IconName>Heart_of_Stone</IconName>
+  </Skill>
+  <Skill>
+    <Name>Continuation</Name>
+    <Job>GNB</Job>
+    <Level>70</Level>
+    <Description>Allows the firing of successive rounds with your gunblade.
+Gnashing Fang may be followed by Jugular Rip.
+Savage Claw may be followed by Abdomen Tear.
+Wicked Talon may be followed by Eye Gouge.</Description>
+    <RecastTime>1</RecastTime>
+    <CastTime>0</CastTime>
+    <TargetType>Self</TargetType>
+    <IconName>Continuation</IconName>
+  </Skill>
+  <Skill>
+    <Name>Jugular Rip</Name>
+    <Job>GNB</Job>
+    <Level>70</Level>
+    <Description>Delivers an attack with a potency of 260.
+Can only be executed when Ready to Rip.
+
+※This action cannot be assigned to a hotbar.</Description>
+    <RecastTime>1</RecastTime>
+    <CastTime>0</CastTime>
+    <TargetType>Enemy</TargetType>
+    <IconName>No_Mercy</IconName>
+  </Skill>
+  <Skill>
+    <Name>Abdomen Tear</Name>
+    <Job>GNB</Job>
+    <Level>70</Level>
+    <Description>Delivers an attack with a potency of 280.
+Can only be executed when Ready to Tear.
+
+※This action cannot be assigned to a hotbar. </Description>
+    <RecastTime>1</RecastTime>
+    <CastTime>0</CastTime>
+    <TargetType>Enemy</TargetType>
+    <IconName>Abdomen_Tear</IconName>
+  </Skill>
+  <Skill>
+    <Name>Eye Gouge</Name>
+    <Job>GNB</Job>
+    <Level>70</Level>
+    <Description>Delivers an attack with a potency of 300.
+Can only be executed when Ready to Gouge.
+
+※This action cannot be assigned to a hotbar. </Description>
+    <RecastTime>1</RecastTime>
+    <CastTime>0</CastTime>
+    <TargetType>Enemy</TargetType>
+    <IconName>Eye_Gouge</IconName>
+  </Skill>
+  <Skill>
+    <Name>Fated Circle</Name>
+    <Job>GNB</Job>
+    <Level>72</Level>
+    <Description>Delivers an attack with a potency of 320 to all nearby enemies.
+Cartridge Cost: 1 </Description>
+    <RecastTime>2.5</RecastTime>
+    <CastTime>0</CastTime>
+    <TargetType>Enemy</TargetType>
+    <IconName>Fated_Circle</IconName>
+  </Skill>
+  <Skill>
+    <Name>Bloodfest</Name>
+    <Job>GNB</Job>
+    <Level>76</Level>
+    <Description>Draws aetheric energy from target, adding 2 Cartridges to your Powder Gauge.</Description>
+    <RecastTime>90</RecastTime>
+    <CastTime>0</CastTime>
+    <TargetType>Self</TargetType>
+    <IconName>Bloodfest</IconName>
+  </Skill>
+  <Skill>
+    <Name>Blasting Zone</Name>
+    <Job>GNB</Job>
+    <Level>80</Level>
+    <Description>Delivers an attack with a potency of 800.</Description>
+    <RecastTime>30</RecastTime>
+    <CastTime>0</CastTime>
+    <TargetType>Enemy</TargetType>
+    <IconName>Blasting_Zone</IconName>
+  </Skill>
+  <Skill>
+    <Name>Rampart</Name>
+    <Job>GNB</Job>
+    <Level>8</Level>
+    <Description>Reduces damage taken by 20%.
+Duration: 20s </Description>
+    <RecastTime>90</RecastTime>
+    <CastTime>0</CastTime>
+    <TargetType>Self</TargetType>
+    <IconName>rampart</IconName>
+  </Skill>
+  <Skill>
+    <Name>Low Blow</Name>
+    <Job>GNB</Job>
+    <Level>12</Level>
+    <Description>Stuns target.
+Duration: 5s </Description>
+    <RecastTime>25</RecastTime>
+    <CastTime>0</CastTime>
+    <TargetType>Enemy</TargetType>
+    <IconName>low_blow</IconName>
+  </Skill>
+  <Skill>
+    <Name>Provoke</Name>
+    <Job>GNB</Job>
+    <Level>15</Level>
+    <Description>Gesture threateningly, placing yourself at the top of a target's enmity list while gaining additional enmity. </Description>
+    <RecastTime>30</RecastTime>
+    <CastTime>0</CastTime>
+    <TargetType>Enemy</TargetType>
+    <IconName>provoke</IconName>
+  </Skill>
+  <Skill>
+    <Name>Interject</Name>
+    <Job>GNB</Job>
+    <Level>18</Level>
+    <Description>Interrupts the use of a target's action.</Description>
+    <RecastTime>30</RecastTime>
+    <CastTime>0</CastTime>
+    <TargetType>Enemy</TargetType>
+    <IconName>interject</IconName>
+  </Skill>
+  <Skill>
+    <Name>Reprisal</Name>
+    <Job>GNB</Job>
+    <Level>22</Level>
+    <Description>Reduces damage dealt by nearby enemies by 10%.
+Duration: 10s </Description>
+    <RecastTime>60</RecastTime>
+    <CastTime>0</CastTime>
+    <TargetType>Self</TargetType>
+    <IconName>reprisal</IconName>
+  </Skill>
+  <Skill>
+    <Name>Arm's Length</Name>
+    <Job>GNB</Job>
+    <Level>32</Level>
+    <Description>Creates a barrier nullifying most knockback and draw-in effects.
+Duration: 6s
+Additional Effect: Slow +20% when barrier is struck
+Duration: 15s </Description>
+    <RecastTime>120</RecastTime>
+    <CastTime>0</CastTime>
+    <TargetType>Self</TargetType>
+    <IconName>arms_length</IconName>
+  </Skill>
+  <Skill>
+    <Name>Shirk</Name>
+    <Job>GNB</Job>
+    <Level>48</Level>
+    <Description>Diverts 25% of enmity to target party member.</Description>
+    <RecastTime>120</RecastTime>
+    <CastTime>0</CastTime>
+    <TargetType>Friendly</TargetType>
+    <IconName>shirk</IconName>
+  </Skill>
+</Root>
