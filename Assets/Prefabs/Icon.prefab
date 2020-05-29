@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 7616734921164711147}
   - component: {fileID: 8557849771526389053}
   - component: {fileID: 5882156621508921899}
+  - component: {fileID: 5135663255217947567}
+  - component: {fileID: 5141014200758446649}
   m_Layer: 5
   m_Name: Icon
   m_TagString: Untagged
@@ -131,3 +133,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _spriteRenderer: {fileID: 0}
+--- !u!225 &5135663255217947567
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6164165781637903711}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
+--- !u!114 &5141014200758446649
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6164165781637903711}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91c9993dd8d623a49814bf0bb27c5a6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

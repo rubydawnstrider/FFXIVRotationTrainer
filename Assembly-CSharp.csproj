@@ -60,11 +60,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\DragDrop.cs" />
+    <Compile Include="Assets\Scripts\DropSlot.cs" />
     <Compile Include="Assets\Scripts\JobType.cs" />
     <Compile Include="Assets\Scripts\Skill.cs" />
     <Compile Include="Assets\Scripts\SkillIcon.cs" />
     <Compile Include="Assets\Scripts\TargetType.cs" />
     <Compile Include="Assets\Scripts\TrainerController.cs" />
+    <Compile Include="Assets\Scripts\UIEelementDraggable.cs" />
     <Compile Include="Assets\Scripts\Utils\XmlParser.cs" />
     <None Include="Assets\Resources\Xml\GNB.xml" />
     <Reference Include="Unity.TextMeshPro.Editor">

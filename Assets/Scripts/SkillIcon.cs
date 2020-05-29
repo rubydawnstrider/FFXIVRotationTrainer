@@ -9,7 +9,6 @@ public class SkillIcon : MonoBehaviour
     private Image _image;
     private Skill _skill;
 
-
     // Start is called before the first frame update
     void Start()
     {
