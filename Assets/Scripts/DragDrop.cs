@@ -36,6 +36,8 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, I
     {
         if (_returnToStartOnDrop)
         {
+            // todo check if it ended in the middle of nowhere and originated from a hotbarslot
+
             _rectTransform.anchoredPosition = _originalAnchor;
             _rectTransform.position = _originalPoint;
         }

@@ -14,6 +14,7 @@ public class Skill
     public TargetType TargetType { get; set; }
     public string IconName { get; set; }
     public string ComboAction { get; set; }
+    public SkillType SkillType { get; set; }
     // todo monk skills require form as well
     // todo job guages 
 }

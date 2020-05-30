@@ -5,12 +5,13 @@ using UnityEngine.UI;
 
 /*************************************************************************
  * Things to add still:
+ *   0. if slot has a skill already, swap
  *   1. keybinds
  *   2. keys do actions
  *   3. account for cast time
  *   4. account for recast time
  *   5. account for gcd
- *   6. change hotbar shape (3x4 vs 12x1 etc)
+ *   6. change hotbar shape (3x4 vs 12x1 etc) : separate controls? or save layouts for everything for each setup?
  *   7. customizable keybinds
  *   8. multiple hotbars
  *   9. moveable hotbars
@@ -64,6 +65,7 @@ public class TrainerController : MonoBehaviour
         foreach (var s in Skills)
         {
             var skill = GameObject.Instantiate(_buttonPrefab);
+            skill.name = s.Name;
             skill.transform.SetParent(_canvas.transform, false);
             skill.transform.position = new Vector2(i++, j);
             //var skill = GameObject.Instantiate(_skillIconPrefab);

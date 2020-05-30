@@ -9,6 +9,7 @@
     <CastTime>0</CastTime>
     <TargetType>Enemy</TargetType>
     <IconName>Keen_Edge</IconName>
+	<SkillType>Weaponskill</SkillType>
   </Skill>
   <Skill>
     <Name>No Mercy</Name>
@@ -20,6 +21,7 @@ Duration: 20s </Description>
     <CastTime>0</CastTime>
     <TargetType>Self</TargetType>
     <IconName>No_Mercy</IconName>
+	<SkillType>Ability</SkillType>
   </Skill>
   <Skill>
     <Name>Brutal Shell</Name>
@@ -37,6 +39,7 @@ Duration: 10s </Description>
     <TargetType>Enemy</TargetType>
 	<ComboAction>Keen Edge</ComboAction>
     <IconName>Brutal_Shell</IconName>
+	<SkillType>Weaponskill</SkillType>
   </Skill>
   <Skill>
     <Name>Camouflage</Name>
@@ -48,6 +51,7 @@ Duration: 20s </Description>
     <CastTime>0</CastTime>
     <TargetType>Self</TargetType>
     <IconName>Camouflage</IconName>
+	<SkillType>Ability</SkillType>
   </Skill>
   <Skill>
     <Name>Demon Slice</Name>
@@ -58,6 +62,7 @@ Duration: 20s </Description>
     <CastTime>0</CastTime>
     <TargetType>Enemy</TargetType>
     <IconName>Demon_Slice</IconName>
+	<SkillType>Weaponskill</SkillType>
   </Skill>
   <Skill>
     <Name>Royal Guard</Name>
@@ -69,6 +74,7 @@ Effect ends upon reuse. </Description>
     <CastTime>0</CastTime>
     <TargetType>Self</TargetType>
     <IconName>Royal_Guard</IconName>
+	<SkillType>Ability</SkillType>
   </Skill>
   <Skill>
     <Name>Lightning Shot</Name>
@@ -80,6 +86,7 @@ Additional Effect: Increased enmity </Description>
     <CastTime>0</CastTime>
     <TargetType>Enemy</TargetType>
     <IconName>Lightning_Shot</IconName>
+	<SkillType>Weaponskill</SkillType>
   </Skill>
   <Skill>
     <Name>Danger Zone</Name>
@@ -90,6 +97,7 @@ Additional Effect: Increased enmity </Description>
     <CastTime>0</CastTime>
     <TargetType>Enemy</TargetType>
     <IconName>Danger_Zone</IconName>
+	<SkillType>Ability</SkillType>
   </Skill>
   <Skill>
     <Name>Solid Barrel</Name>
@@ -104,6 +112,7 @@ Combo Bonus: Adds a Cartridge to your Powder Gauge </Description>
     <TargetType>Enemy</TargetType>
 	<ComboAction>Brutal Shell</ComboAction>
     <IconName>Solid_Barrel</IconName>
+	<SkillType>Weaponskill</SkillType>
   </Skill>
   <Skill>
     <Name>Burst Strike</Name>
@@ -115,6 +124,7 @@ Cartridge Cost: 1 </Description>
     <CastTime>0</CastTime>
     <TargetType>Enemy</TargetType>
     <IconName>Burst_Strike</IconName>
+	<SkillType>Weaponskill</SkillType>
   </Skill>
   <Skill>
     <Name>Nebula</Name>
@@ -126,6 +136,7 @@ Duration: 15s </Description>
     <CastTime>0</CastTime>
     <TargetType>Self</TargetType>
     <IconName>Nebula</IconName>
+	<SkillType>Ability</SkillType>
   </Skill>
   <Skill>
     <Name>Demon Slaughter</Name>
@@ -140,6 +151,7 @@ Combo Bonus: Adds a Cartridge to your Powder Gauge</Description>
     <TargetType>Enemy</TargetType>
 	<ComboAction>Demon Slice</ComboAction>
     <IconName>Demon_Slaughter</IconName>
+	<SkillType>Weaponskill</SkillType>
   </Skill>
   <Skill>
     <Name>Aurora</Name>
@@ -152,6 +164,7 @@ Duration: 18s </Description>
     <CastTime>0</CastTime>
     <TargetType>FriendlyOrSelf</TargetType>
     <IconName>Aurora</IconName>
+	<SkillType>Ability</SkillType>
   </Skill>
   <Skill>
     <Name>Superbolide</Name>
@@ -163,6 +176,7 @@ Duration: 8s </Description>
     <CastTime>0</CastTime>
     <TargetType>Self</TargetType>
     <IconName>Superbolide</IconName>
+	<SkillType>Ability</SkillType>
   </Skill>
   <Skill>
     <Name>Sonic Break</Name>
@@ -177,6 +191,7 @@ This weaponskill does not share a recast timer with any other actions. </Descrip
     <CastTime>0</CastTime>
     <TargetType>Enemy</TargetType>
     <IconName>Sonic_Break</IconName>
+	<SkillType>Weaponskill</SkillType>
   </Skill>
   <Skill>
     <Name>Rough Divide</Name>
@@ -189,6 +204,7 @@ Cannot be executed while bound. </Description>
     <CastTime>0</CastTime>
     <TargetType>Enemy</TargetType>
     <IconName>Rough_Divide</IconName>
+	<SkillType>Ability</SkillType>
   </Skill>
   <Skill>
     <Name>Gnashing Fang</Name>
@@ -203,6 +219,7 @@ This weaponskill does not share a recast timer with any other actions. </Descrip
     <CastTime>0</CastTime>
     <TargetType>Enemy</TargetType>
     <IconName>Gnashing_Fang</IconName>
+	<SkillType>Weaponskill</SkillType>
   </Skill>
   <Skill>
     <Name>Savage Claw</Name>
@@ -217,6 +234,7 @@ Duration: 10s </Description>
     <TargetType>Enemy</TargetType>
 	<ComboAction>Gnashing Fang</ComboAction>
     <IconName>Savage_Claw</IconName>
+	<SkillType>Weaponskill</SkillType>
   </Skill>
   <Skill>
     <Name>Wicked Talon</Name>
@@ -231,6 +249,7 @@ Duration: 10s </Description>
     <TargetType>Enemy</TargetType>
 	<ComboAction>Savage Claw</ComboAction>
     <IconName>Wicked_Talon</IconName>
+	<SkillType>Weaponskill</SkillType>
   </Skill>
   <Skill>
     <Name>Bow Shock</Name>
@@ -244,6 +263,7 @@ Duration: 15s</Description>
     <CastTime>0</CastTime>
     <TargetType>Enemy</TargetType>
     <IconName>Bow_Shock</IconName>
+	<SkillType>Ability</SkillType>
   </Skill>
   <Skill>
     <Name>Heart of Light</Name>
@@ -255,6 +275,7 @@ Duration: 15s</Description>
     <CastTime>0</CastTime>
     <TargetType>Self</TargetType>
     <IconName>Heart_of_Light</IconName>
+	<SkillType>Ability</SkillType>
   </Skill>
   <Skill>
     <Name>Heart of Stone</Name>
@@ -268,6 +289,7 @@ Duration: 10s </Description>
     <CastTime>0</CastTime>
     <TargetType>FriendlyOrSelf</TargetType>
     <IconName>Heart_of_Stone</IconName>
+	<SkillType>Ability</SkillType>
   </Skill>
   <Skill>
     <Name>Continuation</Name>
@@ -281,6 +303,7 @@ Wicked Talon may be followed by Eye Gouge.</Description>
     <CastTime>0</CastTime>
     <TargetType>Self</TargetType>
     <IconName>Continuation</IconName>
+	<SkillType>Ability</SkillType>
   </Skill>
   <Skill>
     <Name>Jugular Rip</Name>
@@ -293,7 +316,8 @@ Can only be executed when Ready to Rip.
     <RecastTime>1</RecastTime>
     <CastTime>0</CastTime>
     <TargetType>Enemy</TargetType>
-    <IconName>No_Mercy</IconName>
+    <IconName>Jugular_Rip</IconName>
+	<SkillType>Ability</SkillType>
   </Skill>
   <Skill>
     <Name>Abdomen Tear</Name>
@@ -307,6 +331,7 @@ Can only be executed when Ready to Tear.
     <CastTime>0</CastTime>
     <TargetType>Enemy</TargetType>
     <IconName>Abdomen_Tear</IconName>
+	<SkillType>Ability</SkillType>
   </Skill>
   <Skill>
     <Name>Eye Gouge</Name>
@@ -320,6 +345,7 @@ Can only be executed when Ready to Gouge.
     <CastTime>0</CastTime>
     <TargetType>Enemy</TargetType>
     <IconName>Eye_Gouge</IconName>
+	<SkillType>Ability</SkillType>
   </Skill>
   <Skill>
     <Name>Fated Circle</Name>
@@ -331,6 +357,7 @@ Cartridge Cost: 1 </Description>
     <CastTime>0</CastTime>
     <TargetType>Enemy</TargetType>
     <IconName>Fated_Circle</IconName>
+	<SkillType>Weaponskill</SkillType>
   </Skill>
   <Skill>
     <Name>Bloodfest</Name>
@@ -341,6 +368,7 @@ Cartridge Cost: 1 </Description>
     <CastTime>0</CastTime>
     <TargetType>Self</TargetType>
     <IconName>Bloodfest</IconName>
+	<SkillType>Ability</SkillType>
   </Skill>
   <Skill>
     <Name>Blasting Zone</Name>
@@ -351,6 +379,7 @@ Cartridge Cost: 1 </Description>
     <CastTime>0</CastTime>
     <TargetType>Enemy</TargetType>
     <IconName>Blasting_Zone</IconName>
+	<SkillType>Ability</SkillType>
   </Skill>
   <Skill>
     <Name>Rampart</Name>
@@ -362,6 +391,7 @@ Duration: 20s </Description>
     <CastTime>0</CastTime>
     <TargetType>Self</TargetType>
     <IconName>rampart</IconName>
+	<SkillType>Ability</SkillType>
   </Skill>
   <Skill>
     <Name>Low Blow</Name>
@@ -373,6 +403,7 @@ Duration: 5s </Description>
     <CastTime>0</CastTime>
     <TargetType>Enemy</TargetType>
     <IconName>low_blow</IconName>
+	<SkillType>Ability</SkillType>
   </Skill>
   <Skill>
     <Name>Provoke</Name>
@@ -383,6 +414,7 @@ Duration: 5s </Description>
     <CastTime>0</CastTime>
     <TargetType>Enemy</TargetType>
     <IconName>provoke</IconName>
+	<SkillType>Ability</SkillType>
   </Skill>
   <Skill>
     <Name>Interject</Name>
@@ -393,6 +425,7 @@ Duration: 5s </Description>
     <CastTime>0</CastTime>
     <TargetType>Enemy</TargetType>
     <IconName>interject</IconName>
+	<SkillType>Ability</SkillType>
   </Skill>
   <Skill>
     <Name>Reprisal</Name>
@@ -404,6 +437,7 @@ Duration: 10s </Description>
     <CastTime>0</CastTime>
     <TargetType>Self</TargetType>
     <IconName>reprisal</IconName>
+	<SkillType>Ability</SkillType>
   </Skill>
   <Skill>
     <Name>Arm's Length</Name>
@@ -417,6 +451,7 @@ Duration: 15s </Description>
     <CastTime>0</CastTime>
     <TargetType>Self</TargetType>
     <IconName>arms_length</IconName>
+	<SkillType>Ability</SkillType>
   </Skill>
   <Skill>
     <Name>Shirk</Name>
@@ -427,5 +462,6 @@ Duration: 15s </Description>
     <CastTime>0</CastTime>
     <TargetType>Friendly</TargetType>
     <IconName>shirk</IconName>
+	<SkillType>Ability</SkillType>
   </Skill>
 </Root>
