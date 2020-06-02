@@ -176,4 +176,23 @@ public class Hotbar : MonoBehaviour
         }
 
     }
+
+    public IList<HotbarSlot> GetHotbarSlots()
+    {
+        return new List<HotbarSlot>
+        {
+            Slot1.GetComponent<HotbarSlot>(),
+            Slot2.GetComponent<HotbarSlot>(),
+            Slot3.GetComponent<HotbarSlot>(),
+            Slot4.GetComponent<HotbarSlot>(),
+            Slot5.GetComponent<HotbarSlot>(),
+            Slot6.GetComponent<HotbarSlot>(),
+            Slot7.GetComponent<HotbarSlot>(),
+            Slot8.GetComponent<HotbarSlot>(),
+            Slot9.GetComponent<HotbarSlot>(),
+            Slot10.GetComponent<HotbarSlot>(),
+            Slot11.GetComponent<HotbarSlot>(),
+            Slot12.GetComponent<HotbarSlot>()
+        };
+    }
 }

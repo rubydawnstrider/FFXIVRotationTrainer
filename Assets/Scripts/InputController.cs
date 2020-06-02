@@ -1,6 +1,8 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class InputController : MonoBehaviour
 {
@@ -28,7 +30,7 @@ public class InputController : MonoBehaviour
 
     #region defaults
     //for now.replace with true manager later
-    IList<Keybind> Hotbar1 = new List<Keybind> {
+    IList<Keybind> Hotbar0 = new List<Keybind> {
 
         new Keybind { Name = "Hotbar1Slot1", KeyCode = KeyCode.Alpha1, Modifier = KeyModifier.None }, 
         new Keybind { Name = "Hotbar1Slot2", KeyCode = KeyCode.Alpha2, Modifier = KeyModifier.None },
@@ -57,28 +59,106 @@ public class InputController : MonoBehaviour
     //private Keybind Hotbar1Slot12 = new Keybind { KeyCode = KeyCode.Equals, Modifier = KeyModifier.None };
     #endregion defaults
 
+    [SerializeField] private Hotbar Hotbar1;
+    [SerializeField] private Hotbar Hotbar2;
+    [SerializeField] private Hotbar Hotbar3;
 
     void Update()
     {
         _timeSinceGcdStart += Time.deltaTime;
-        foreach (var kb in Hotbar1)
+        var isAltDown = Input.GetKey(KeyCode.LeftAlt) || Input.GetKey(KeyCode.RightAlt);
+        var isCtrlDown = Input.GetKey(KeyCode.LeftControl) || Input.GetKey(KeyCode.RightControl);
+        var isShiftDown = Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift);
+        var is1Down = Input.GetKey(KeyCode.Alpha1);
+        var is2Down = Input.GetKey(KeyCode.Alpha2);
+        var is3Down = Input.GetKey(KeyCode.Alpha3);
+        var is4Down = Input.GetKey(KeyCode.Alpha4);
+        var is5Down = Input.GetKey(KeyCode.Alpha5);
+        var is6Down = Input.GetKey(KeyCode.Alpha6);
+        var is7Down = Input.GetKey(KeyCode.Alpha7);
+        var is8Down = Input.GetKey(KeyCode.Alpha8);
+        var is9Down = Input.GetKey(KeyCode.Alpha9);
+        var is0Down = Input.GetKey(KeyCode.Alpha0);
+        var isMinusDown = Input.GetKey(KeyCode.Minus);
+        var isEqualDown = Input.GetKey(KeyCode.Equals);
+
+        foreach(var slot in Hotbar1.GetHotbarSlots())
         {
+            if (!slot.HasAction())
+                continue;
+
+            var kb = slot.GetKeybind();
             if (Input.GetKeyDown(kb.KeyCode))
             {
-                if (kb.Modifier.HasFlag(KeyModifier.None) ||
-                    ( kb.Modifier.HasFlag(KeyModifier.Alt) && (Input.GetKey(KeyCode.LeftAlt) || Input.GetKey(KeyCode.RightAlt)) ) ||
-                    ( kb.Modifier.HasFlag(KeyModifier.Shift) && (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift)) ) ||
-                    ( kb.Modifier.HasFlag(KeyModifier.Control) && (Input.GetKey(KeyCode.LeftControl) || Input.GetKey(KeyCode.RightControl)) ) )
+                if ((!kb.Modifier.HasFlag(KeyModifier.Alt) && !kb.Modifier.HasFlag(KeyModifier.Control) && !kb.Modifier.HasFlag(KeyModifier.Shift) &&
+                        !Input.GetKey(KeyCode.LeftAlt) && !Input.GetKey(KeyCode.RightAlt) && !Input.GetKey(KeyCode.LeftShift) &&
+                        !Input.GetKey(KeyCode.RightShift) && !Input.GetKey(KeyCode.LeftControl) && !Input.GetKey(KeyCode.RightControl)) ||
+                    (kb.Modifier.HasFlag(KeyModifier.Alt) && (Input.GetKey(KeyCode.LeftAlt) || Input.GetKey(KeyCode.RightAlt))) ||
+                    (kb.Modifier.HasFlag(KeyModifier.Shift) && (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))) ||
+                    (kb.Modifier.HasFlag(KeyModifier.Control) && (Input.GetKey(KeyCode.LeftControl) || Input.GetKey(KeyCode.RightControl))))
                 {
-                    DoHotbarSlot(kb.Skill, kb.Name);
-                    //GetType().GetMethod("Do" + kb.Name, System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance).Invoke(this, new[] { kb.Skill });
+                    DoHotbarSlot(slot.GetAction(), kb.Name);
                     break;
                 }
             }
         }
+        foreach(var slot in Hotbar2.GetHotbarSlots())
+        {
+            if (!slot.HasAction())
+                continue;
+
+            var kb = slot.GetKeybind();
+            if (Input.GetKeyDown(kb.KeyCode))
+            {
+                if ((!kb.Modifier.HasFlag(KeyModifier.Alt) && !kb.Modifier.HasFlag(KeyModifier.Control) && !kb.Modifier.HasFlag(KeyModifier.Shift) &&
+                        !Input.GetKey(KeyCode.LeftAlt) && !Input.GetKey(KeyCode.RightAlt) && !Input.GetKey(KeyCode.LeftShift) &&
+                        !Input.GetKey(KeyCode.RightShift) && !Input.GetKey(KeyCode.LeftControl) && !Input.GetKey(KeyCode.RightControl)) ||
+                    (kb.Modifier.HasFlag(KeyModifier.Alt) && (Input.GetKey(KeyCode.LeftAlt) || Input.GetKey(KeyCode.RightAlt))) ||
+                    (kb.Modifier.HasFlag(KeyModifier.Shift) && (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))) ||
+                    (kb.Modifier.HasFlag(KeyModifier.Control) && (Input.GetKey(KeyCode.LeftControl) || Input.GetKey(KeyCode.RightControl))))
+                {
+                    DoHotbarSlot(slot.GetAction(), kb.Name);
+                    break;
+                }
+            }
+        }
+        foreach(var slot in Hotbar3.GetHotbarSlots())
+        {
+            if (!slot.HasAction())
+                continue;
+
+            var kb = slot.GetKeybind();
+            if (Input.GetKeyDown(kb.KeyCode))
+            {
+                if ( (!kb.Modifier.HasFlag(KeyModifier.Alt) && !kb.Modifier.HasFlag(KeyModifier.Control) && !kb.Modifier.HasFlag(KeyModifier.Shift) &&
+                        !Input.GetKey(KeyCode.LeftAlt) && !Input.GetKey(KeyCode.RightAlt) && !Input.GetKey(KeyCode.LeftShift) && 
+                        !Input.GetKey(KeyCode.RightShift) && !Input.GetKey(KeyCode.LeftControl) && !Input.GetKey(KeyCode.RightControl) ) ||
+                    ( kb.Modifier.HasFlag(KeyModifier.Alt) && (Input.GetKey(KeyCode.LeftAlt) || Input.GetKey(KeyCode.RightAlt)) ) ||
+                    ( kb.Modifier.HasFlag(KeyModifier.Shift) && (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift)) ) ||
+                    ( kb.Modifier.HasFlag(KeyModifier.Control) && (Input.GetKey(KeyCode.LeftControl) || Input.GetKey(KeyCode.RightControl)) ) )
+                {
+                    DoHotbarSlot(slot.GetAction(), kb.Name);
+                    break;
+                }
+            }
+        }
+        //foreach (var kb in Hotbar0)
+        //{
+        //    if (Input.GetKeyDown(kb.KeyCode))
+        //    {
+        //        if (kb.Modifier.HasFlag(KeyModifier.None) ||
+        //            ( kb.Modifier.HasFlag(KeyModifier.Alt) && (Input.GetKey(KeyCode.LeftAlt) || Input.GetKey(KeyCode.RightAlt)) ) ||
+        //            ( kb.Modifier.HasFlag(KeyModifier.Shift) && (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift)) ) ||
+        //            ( kb.Modifier.HasFlag(KeyModifier.Control) && (Input.GetKey(KeyCode.LeftControl) || Input.GetKey(KeyCode.RightControl)) ) )
+        //        {
+        //            DoHotbarSlot(kb.HotbarSlot.GetAction(), kb.Name);
+        //            //GetType().GetMethod("Do" + kb.Name, System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance).Invoke(this, new[] { kb.Skill });
+        //            break;
+        //        }
+        //    }
+        //}
     }
 
-    #region hotbar1
     void DoHotbarSlot(Skill skill, string name)
     {
         Debug.Log(name + " Press");
@@ -97,150 +177,35 @@ public class InputController : MonoBehaviour
                 Debug.Log(skill.SkillType + ": " + skill.Name);
             }
             // todo handle recast time, casttime, available, etc
-            // todo kick off gcd, recast circle
+            // todo kick off gcd/recast circle
         }
 
     }
-    private void DoHotbar1Slot1(Skill skill)
-    {
-        Debug.Log("H1S1 Press");
-        if (skill != null)
-        {
-            if (skill.SkillType != SkillType.Ability) // is a GCD skill
-            {
-                if (_timeSinceGcdStart >= GCD)
-                {
-                    _timeSinceGcdStart = 0;
-                    Debug.Log(skill.SkillType + ": " + skill.Name);
-                }
-            }
-            else
-            {
-                Debug.Log(skill.SkillType + ": " + skill.Name);
-            }
-            // todo handle recast time, casttime, available, etc
-            // todo kick off gcd, recast circle
-        }
-    }
-    private void DoHotbar1Slot2(Skill skill)
-    {
-        Debug.Log("H1S2 Press");
-        if (skill != null)
-        {
-            Debug.Log("Action: " + skill.Name);
-            // todo handle recast time, casttime, available, etc
-            // todo kick off gcd, recast circle
-        }
-    }
-    private void DoHotbar1Slot3(Skill skill)
-    {
-        Debug.Log("H1S3 Press");
-        if (skill != null)
-        {
-            Debug.Log("Action: " + skill.Name);
-            // todo handle recast time, casttime, available, etc
-            // todo kick off gcd, recast circle
-        }
-    }
-    private void DoHotbar1Slot4(Skill skill)
-    {
-        Debug.Log("H1S4 Press");
-        if (skill != null)
-        {
-            Debug.Log("Action: " + skill.Name);
-            // todo handle recast time, casttime, available, etc
-            // todo kick off gcd, recast circle
-        }
-    }
-    private void DoHotbar1Slot5(Skill skill)
-    {
-        Debug.Log("H1S5 Press");
-        if (skill != null)
-        {
-            Debug.Log("Action: " + skill.Name);
-            // todo handle recast time, casttime, available, etc
-            // todo kick off gcd, recast circle
-        }
-    }
-    private void DoHotbar1Slot6(Skill skill)
-    {
-        Debug.Log("H1S6 Press");
-        if (skill != null)
-        {
-            Debug.Log("Action: " + skill.Name);
-            // todo handle recast time, casttime, available, etc
-            // todo kick off gcd, recast circle
-        }
-    }
-    private void DoHotbar1Slot7(Skill skill)
-    {
-        Debug.Log("H1S7 Press");
-        if (skill != null)
-        {
-            Debug.Log("Action: " + skill.Name);
-            // todo handle recast time, casttime, available, etc
-            // todo kick off gcd, recast circle
-        }
-    }
-    private void DoHotbar1Slot8(Skill skill)
-    {
-        Debug.Log("H1S8 Press");
-        if (skill != null)
-        {
-            Debug.Log("Action: " + skill.Name);
-            // todo handle recast time, casttime, available, etc
-            // todo kick off gcd, recast circle
-        }
-    }
-    private void DoHotbar1Slot9(Skill skill)
-    {
-        Debug.Log("H1S9 Press");
-        if (skill != null)
-        {
-            Debug.Log("Action: " + skill.Name);
-            // todo handle recast time, casttime, available, etc
-            // todo kick off gcd, recast circle
-        }
-    }
-    private void DoHotbar1Slot10(Skill skill)
-    {
-        Debug.Log("H1S10 Press");
-        if (skill != null)
-        {
-            Debug.Log("Action: " + skill.Name);
-            // todo handle recast time, casttime, available, etc
-            // todo kick off gcd, recast circle
-        }
-    }
-    private void DoHotbar1Slot11(Skill skill)
-    {
-        Debug.Log("H1S11 Press");
-        if (skill != null)
-        {
-            Debug.Log("Action: " + skill.Name);
-            // todo handle recast time, casttime, available, etc
-            // todo kick off gcd, recast circle
-        }
-    }
-    private void DoHotbar1Slot12(Skill skill)
-    {
-        Debug.Log("H1S12 Press");
-        if (skill != null)
-        {
-            Debug.Log("Action: " + skill.Name);
-            // todo handle recast time, casttime, available, etc
-            // todo kick off gcd, recast circle
-        }
-    }
-    #endregion hotbar1
 
-    public void SetHotbarSlotSkill(string slotName, Skill skill)
+    public void SetHotbarSlotSkill(int hotbar, string slotName, Button skill)
     {
-        foreach(var slot in Hotbar1)
+        Hotbar hb = null;
+        switch(hotbar)
         {
-            if (slot.Name == slotName)
+            case 1:
+                hb = Hotbar1;
+                break;
+            case 2:
+                hb = Hotbar2;
+                break;
+            case 3:
+                hb = Hotbar3;
+                break;
+            default:
+                Debug.LogError("Attempt to slot invalid hotbar (" + hotbar + ")");
+                throw new ArgumentException("invalid hotbar number", "hotbar");
+        }
+
+        foreach(var slot in hb.GetHotbarSlots())
+        {
+            if (slot.gameObject.name == slotName)
             {
-                slot.Skill = skill;
+                slot.SetAction(skill);
                 break;
             }
         }

@@ -65,8 +65,8 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\DebuggingStuff.cs" />
     <Compile Include="Assets\Scripts\DragDrop.cs" />
-    <Compile Include="Assets\Scripts\DropSlot.cs" />
     <Compile Include="Assets\Scripts\Hotbar.cs" />
+    <Compile Include="Assets\Scripts\HotbarSlot.cs" />
     <Compile Include="Assets\Scripts\InputController.cs" />
     <Compile Include="Assets\Scripts\JobType.cs" />
     <Compile Include="Assets\Scripts\KeyModifier.cs" />
