@@ -28,12 +28,10 @@ using UnityEngine.UI;
 
 public class TrainerController : MonoBehaviour
 {
-    [SerializeField] private string SkillsFilename;
     [SerializeField] private IList<Skill> Skills;
     [SerializeField] private GameObject _skillContainer;
-    [SerializeField] private GameObject _skillIconPrefab;
     [SerializeField] private Canvas _canvas;
-    [SerializeField] private Button _buttonPrefab;
+    [SerializeField] private GameObject _skillIconPrefab;
     [SerializeField] private GameObject _skillLogPrefab;
     [SerializeField] private GameObject _skillLogPanel;
     [SerializeField] private ScrollRect _skillLogPanelScroll;
@@ -56,7 +54,6 @@ public class TrainerController : MonoBehaviour
             var textAsset = (TextAsset)Resources.Load("Xml/" + /*JOB*/ "GNB");
             var text = textAsset.text;
             Skills = XmlParser<Skill>.ParseXmlFromText(text);
-            //Skills = XmlParser<Skill>.ParseListFromXmlFile(SkillsFilename);
             if (Skills.Count < 1)
             {
                 _debugText.text = _debugText.text + System.Environment.NewLine + "no skills";
@@ -74,7 +71,6 @@ public class TrainerController : MonoBehaviour
         {
             _debugText.text = "ERROR! " + e.Message + System.Environment.NewLine + e.StackTrace;
         }
-        //Skills = XmlParser<SkillsList>.ParseObjectFromXmlFile(SkillsFilename);
     }
 
     public Canvas GetCanvas()
@@ -89,15 +85,11 @@ public class TrainerController : MonoBehaviour
         var j = 3;
         foreach (var s in Skills)
         {
-            var skill = GameObject.Instantiate(_buttonPrefab);
+            var skill = Instantiate(_skillIconPrefab);
             skill.name = s.Name;
             skill.transform.SetParent(_canvas.transform, false);
             skill.transform.position = new Vector2(i++, j);
-            //var skill = GameObject.Instantiate(_skillIconPrefab);
-            //skill.transform.parent = _skillContainer.transform;
-            //skill.transform.localPosition = new Vector2(i++, j);
             skill.GetComponent<SkillIcon>().Initialize(s);
-            //skill.transform.parent = _skillContainer.transform;
             if (i > 6)
             {
                 i = -7;
@@ -110,12 +102,6 @@ public class TrainerController : MonoBehaviour
         {
             Debug.Log("Child" + i++ + " icon: " + t.gameObject.GetComponent<SkillIcon>().GetSkill().Name + " (" + t.position.x + "," + t.position.y + ")");
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     public void AddSkillLogEntry(string skillName, Sprite skillIcon)

@@ -1,55 +1,38 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class SkillIcon : MonoBehaviour
+public class SkillIcon : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
-    [SerializeField] private SpriteRenderer _spriteRenderer;
-    private Image _image;
+    [SerializeField] private Image _image;
     private Skill _skill;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        if (_spriteRenderer == null)
-        {
-            _spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
-        }
-        _image = gameObject.GetComponent<Image>();
-        UpdateIcon();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     public void Initialize(Skill skill)
     {
         _skill = skill;
-        UpdateIcon();
-    }
-
-    private void UpdateIcon()
-    {
         if (_skill == null)
         {
             return;
         }
+
         var path = "Icons/Skills/" + _skill.Job + "/" + _skill.IconName;
         var sprite = Resources.Load<Sprite>(path);
-        if (_spriteRenderer != null)
-        {
-            _spriteRenderer.sprite = sprite;
-        }
-        if (_image != null)
-        {
-            _image.sprite = sprite;
-        }
+
+        _image.sprite = sprite;
+        TooltipController.Instance().CreateTooltip(skill, sprite);
     }
 
     public Skill GetSkill() { return _skill; }
 
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        TooltipController.Instance().ShowTooltip(_skill.Name);
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        TooltipController.Instance().HideTooltip(_skill.Name);
+    }
 }

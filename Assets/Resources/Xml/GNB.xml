@@ -6,7 +6,7 @@
     <Level>1</Level>
     <Description>Delivers an attack with a potency of 200.</Description>
     <RecastTime>2.5</RecastTime>
-    <CastTime>0</CastTime>
+    <CastTime>1</CastTime>
     <TargetType>Enemy</TargetType>
     <IconName>Keen_Edge</IconName>
 	<SkillType>Weaponskill</SkillType>
@@ -18,7 +18,7 @@
     <Description>Increases damage dealt by 20%.
 Duration: 20s </Description>
     <RecastTime>60</RecastTime>
-    <CastTime>0</CastTime>
+    <CastTime>2.3</CastTime>
     <TargetType>Self</TargetType>
     <IconName>No_Mercy</IconName>
 	<SkillType>Ability</SkillType>
@@ -35,7 +35,7 @@ Cure Potency: 150
 Combo Bonus: Creates a barrier which nullifies damage equaling HP restored
 Duration: 10s </Description>
     <RecastTime>2.5</RecastTime>
-    <CastTime>0</CastTime>
+    <CastTime>4.56</CastTime>
     <TargetType>Enemy</TargetType>
 	<ComboAction>Keen Edge</ComboAction>
     <IconName>Brutal_Shell</IconName>
@@ -390,7 +390,7 @@ Duration: 20s </Description>
     <RecastTime>90</RecastTime>
     <CastTime>0</CastTime>
     <TargetType>Self</TargetType>
-    <IconName>rampart</IconName>
+    <IconName>Rampart</IconName>
 	<SkillType>Ability</SkillType>
   </Skill>
   <Skill>
@@ -402,7 +402,7 @@ Duration: 5s </Description>
     <RecastTime>25</RecastTime>
     <CastTime>0</CastTime>
     <TargetType>Enemy</TargetType>
-    <IconName>low_blow</IconName>
+    <IconName>Low_Blow</IconName>
 	<SkillType>Ability</SkillType>
   </Skill>
   <Skill>
@@ -413,7 +413,7 @@ Duration: 5s </Description>
     <RecastTime>30</RecastTime>
     <CastTime>0</CastTime>
     <TargetType>Enemy</TargetType>
-    <IconName>provoke</IconName>
+    <IconName>Provoke</IconName>
 	<SkillType>Ability</SkillType>
   </Skill>
   <Skill>
@@ -424,7 +424,7 @@ Duration: 5s </Description>
     <RecastTime>30</RecastTime>
     <CastTime>0</CastTime>
     <TargetType>Enemy</TargetType>
-    <IconName>interject</IconName>
+    <IconName>Interject</IconName>
 	<SkillType>Ability</SkillType>
   </Skill>
   <Skill>
@@ -436,7 +436,7 @@ Duration: 10s </Description>
     <RecastTime>60</RecastTime>
     <CastTime>0</CastTime>
     <TargetType>Self</TargetType>
-    <IconName>reprisal</IconName>
+    <IconName>Reprisal</IconName>
 	<SkillType>Ability</SkillType>
   </Skill>
   <Skill>
@@ -450,7 +450,7 @@ Duration: 15s </Description>
     <RecastTime>120</RecastTime>
     <CastTime>0</CastTime>
     <TargetType>Self</TargetType>
-    <IconName>arms_length</IconName>
+    <IconName>Arms_Length</IconName>
 	<SkillType>Ability</SkillType>
   </Skill>
   <Skill>
@@ -461,7 +461,7 @@ Duration: 15s </Description>
     <RecastTime>120</RecastTime>
     <CastTime>0</CastTime>
     <TargetType>Friendly</TargetType>
-    <IconName>shirk</IconName>
+    <IconName>Shirk</IconName>
 	<SkillType>Ability</SkillType>
   </Skill>
 </Root>
