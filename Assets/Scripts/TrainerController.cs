@@ -33,7 +33,9 @@ public class TrainerController : MonoBehaviour
     [SerializeField] private GameObject _skillIconPrefab;
     [SerializeField] private Canvas _canvas;
     [SerializeField] private Button _buttonPrefab;
-    [SerializeField] private Image _hotbarSlotPrefab;
+    [SerializeField] private GameObject _skillLogPrefab;
+    [SerializeField] private GameObject _skillLogPanel;
+    [SerializeField] private ScrollRect _skillLogPanelScroll;
 
     private static TrainerController _instance;
 
@@ -91,5 +93,18 @@ public class TrainerController : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void AddSkillLogEntry(string skillName, Sprite skillIcon)
+    {
+        var logEntry = Instantiate<GameObject>(_skillLogPrefab, _skillLogPanel.transform);
+        logEntry.GetComponent<SkillLogEntry>().Initialize(skillName, skillIcon);
+        StartCoroutine(ScrollToBottom());
+    }
+
+    private IEnumerator ScrollToBottom()
+    {
+        yield return new WaitForEndOfFrame();
+        _skillLogPanelScroll.verticalNormalizedPosition = 0f;
     }
 }

@@ -6,6 +6,10 @@ using UnityEngine.UI;
 
 public class InputController : MonoBehaviour
 {
+    [SerializeField] private Hotbar Hotbar1;
+    [SerializeField] private Hotbar Hotbar2;
+    [SerializeField] private Hotbar Hotbar3;
+
     public float GCD = 2.5f;
     private float _timeSinceGcdStart;
 
@@ -24,44 +28,7 @@ public class InputController : MonoBehaviour
         {
             _instance = this;
         }
-
     }
-
-
-    #region defaults
-    //for now.replace with true manager later
-    IList<Keybind> Hotbar0 = new List<Keybind> {
-
-        new Keybind { Name = "Hotbar1Slot1", KeyCode = KeyCode.Alpha1, Modifier = KeyModifier.None }, 
-        new Keybind { Name = "Hotbar1Slot2", KeyCode = KeyCode.Alpha2, Modifier = KeyModifier.None },
-        new Keybind { Name = "Hotbar1Slot3", KeyCode = KeyCode.Alpha3, Modifier = KeyModifier.None },
-        new Keybind { Name = "Hotbar1Slot4", KeyCode = KeyCode.Alpha4, Modifier = KeyModifier.None },
-        new Keybind { Name = "Hotbar1Slot5", KeyCode = KeyCode.Alpha5, Modifier = KeyModifier.None },
-        new Keybind { Name = "Hotbar1Slot6", KeyCode = KeyCode.Alpha6, Modifier = KeyModifier.None },
-        new Keybind { Name = "Hotbar1Slot7", KeyCode = KeyCode.Alpha7, Modifier = KeyModifier.None },
-        new Keybind { Name = "Hotbar1Slot8", KeyCode = KeyCode.Alpha8, Modifier = KeyModifier.None },
-        new Keybind { Name = "Hotbar1Slot9", KeyCode = KeyCode.Alpha9, Modifier = KeyModifier.None },
-        new Keybind { Name = "Hotbar1Slot10", KeyCode = KeyCode.Alpha0, Modifier = KeyModifier.None },
-        new Keybind { Name = "Hotbar1Slot11", KeyCode = KeyCode.Minus, Modifier = KeyModifier.None },
-        new Keybind { Name = "Hotbar1Slot12", KeyCode = KeyCode.Equals, Modifier = KeyModifier.None }
-    };
-    //private Keybind Hotbar1Slot1  = new Keybind { KeyCode = KeyCode.Alpha1, Modifier = KeyModifier.None };
-    //private Keybind Hotbar1Slot2  = new Keybind { KeyCode = KeyCode.Alpha2, Modifier = KeyModifier.None };
-    //private Keybind Hotbar1Slot3  = new Keybind { KeyCode = KeyCode.Alpha3, Modifier = KeyModifier.None };
-    //private Keybind Hotbar1Slot4  = new Keybind { KeyCode = KeyCode.Alpha4, Modifier = KeyModifier.None };
-    //private Keybind Hotbar1Slot5  = new Keybind { KeyCode = KeyCode.Alpha5, Modifier = KeyModifier.None };
-    //private Keybind Hotbar1Slot6  = new Keybind { KeyCode = KeyCode.Alpha6, Modifier = KeyModifier.None };
-    //private Keybind Hotbar1Slot7  = new Keybind { KeyCode = KeyCode.Alpha7, Modifier = KeyModifier.None };
-    //private Keybind Hotbar1Slot8  = new Keybind { KeyCode = KeyCode.Alpha8, Modifier = KeyModifier.None };
-    //private Keybind Hotbar1Slot9  = new Keybind { KeyCode = KeyCode.Alpha9, Modifier = KeyModifier.None };
-    //private Keybind Hotbar1Slot10 = new Keybind { KeyCode = KeyCode.Alpha0, Modifier = KeyModifier.None };
-    //private Keybind Hotbar1Slot11 = new Keybind { KeyCode = KeyCode.Minus, Modifier = KeyModifier.None };
-    //private Keybind Hotbar1Slot12 = new Keybind { KeyCode = KeyCode.Equals, Modifier = KeyModifier.None };
-    #endregion defaults
-
-    [SerializeField] private Hotbar Hotbar1;
-    [SerializeField] private Hotbar Hotbar2;
-    [SerializeField] private Hotbar Hotbar3;
 
     void Update()
     {
@@ -97,7 +64,7 @@ public class InputController : MonoBehaviour
                     (kb.Modifier.HasFlag(KeyModifier.Shift) && (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))) ||
                     (kb.Modifier.HasFlag(KeyModifier.Control) && (Input.GetKey(KeyCode.LeftControl) || Input.GetKey(KeyCode.RightControl))))
                 {
-                    DoHotbarSlot(slot.GetAction(), kb.Name);
+                    DoHotbarSlot(slot.GetAction(), kb.Name, slot.GetCurrentImage());
                     break;
                 }
             }
@@ -117,7 +84,7 @@ public class InputController : MonoBehaviour
                     (kb.Modifier.HasFlag(KeyModifier.Shift) && (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))) ||
                     (kb.Modifier.HasFlag(KeyModifier.Control) && (Input.GetKey(KeyCode.LeftControl) || Input.GetKey(KeyCode.RightControl))))
                 {
-                    DoHotbarSlot(slot.GetAction(), kb.Name);
+                    DoHotbarSlot(slot.GetAction(), kb.Name, slot.GetCurrentImage());
                     break;
                 }
             }
@@ -137,29 +104,14 @@ public class InputController : MonoBehaviour
                     ( kb.Modifier.HasFlag(KeyModifier.Shift) && (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift)) ) ||
                     ( kb.Modifier.HasFlag(KeyModifier.Control) && (Input.GetKey(KeyCode.LeftControl) || Input.GetKey(KeyCode.RightControl)) ) )
                 {
-                    DoHotbarSlot(slot.GetAction(), kb.Name);
+                    DoHotbarSlot(slot.GetAction(), kb.Name, slot.GetCurrentImage());
                     break;
                 }
             }
         }
-        //foreach (var kb in Hotbar0)
-        //{
-        //    if (Input.GetKeyDown(kb.KeyCode))
-        //    {
-        //        if (kb.Modifier.HasFlag(KeyModifier.None) ||
-        //            ( kb.Modifier.HasFlag(KeyModifier.Alt) && (Input.GetKey(KeyCode.LeftAlt) || Input.GetKey(KeyCode.RightAlt)) ) ||
-        //            ( kb.Modifier.HasFlag(KeyModifier.Shift) && (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift)) ) ||
-        //            ( kb.Modifier.HasFlag(KeyModifier.Control) && (Input.GetKey(KeyCode.LeftControl) || Input.GetKey(KeyCode.RightControl)) ) )
-        //        {
-        //            DoHotbarSlot(kb.HotbarSlot.GetAction(), kb.Name);
-        //            //GetType().GetMethod("Do" + kb.Name, System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance).Invoke(this, new[] { kb.Skill });
-        //            break;
-        //        }
-        //    }
-        //}
     }
 
-    void DoHotbarSlot(Skill skill, string name)
+    void DoHotbarSlot(Skill skill, string name, Sprite skillIcon)
     {
         Debug.Log(name + " Press");
         if (skill != null)
@@ -170,11 +122,13 @@ public class InputController : MonoBehaviour
                 {
                     _timeSinceGcdStart = 0;
                     Debug.Log(skill.SkillType + ": " + skill.Name);
+                    TrainerController.Instance().AddSkillLogEntry(skill.Name, skillIcon);
                 }
             }
             else
             {
                 Debug.Log(skill.SkillType + ": " + skill.Name);
+                TrainerController.Instance().AddSkillLogEntry(skill.Name, skillIcon);
             }
             // todo handle recast time, casttime, available, etc
             // todo kick off gcd/recast circle

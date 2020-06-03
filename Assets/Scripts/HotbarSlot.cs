@@ -207,6 +207,10 @@ public class HotbarSlot : MonoBehaviour, IDropHandler
             }
         }
     }
+    public Sprite GetCurrentImage()
+    {
+        return ActionButton.GetComponent<Image>().sprite;
+    }
     public bool HasAction() { return _hasAction; }
 
 }
