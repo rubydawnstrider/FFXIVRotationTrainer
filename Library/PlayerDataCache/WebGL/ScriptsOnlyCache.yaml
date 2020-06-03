@@ -8,6 +8,8 @@ ScriptsOnlyBuild:
     - InputController
     - SkillIcon
     - SkillLogEntry
+    - Tooltip
+    - TooltipController
     - TrainerController
     Unity.2D.Tilemap.Editor.dll:
     - UnityEditor.Tilemaps.GridPaintingState
@@ -36,8 +38,6 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.Scrollbar
     - UnityEngine.UI.Text
     - UnityEngine.UI.VerticalLayoutGroup
-    com.unity.multiplayer-hlapi.Runtime.dll:
-    - UnityEngine.Networking.NetworkCallbacks
   sceneClasses:
     Assets/Scenes/SampleScene.unity:
     - Class: 1
@@ -59,49 +59,53 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11196}
+      Script: {instanceID: 11202}
     - Class: 114
-      Script: {instanceID: 11198}
+      Script: {instanceID: 11204}
     - Class: 114
-      Script: {instanceID: 11218}
+      Script: {instanceID: 11206}
     - Class: 114
-      Script: {instanceID: 11368}
+      Script: {instanceID: 11226}
     - Class: 114
-      Script: {instanceID: 11452}
+      Script: {instanceID: 11376}
     - Class: 114
-      Script: {instanceID: 11500}
+      Script: {instanceID: 11460}
     - Class: 114
-      Script: {instanceID: 11632}
+      Script: {instanceID: 11508}
     - Class: 114
-      Script: {instanceID: 11654}
+      Script: {instanceID: 11640}
     - Class: 114
-      Script: {instanceID: 11832}
+      Script: {instanceID: 11662}
     - Class: 114
-      Script: {instanceID: 11910}
+      Script: {instanceID: 11840}
     - Class: 114
-      Script: {instanceID: 12046}
+      Script: {instanceID: 11918}
     - Class: 114
-      Script: {instanceID: 12342}
+      Script: {instanceID: 12054}
     - Class: 114
-      Script: {instanceID: 12516}
+      Script: {instanceID: 12350}
     - Class: 114
-      Script: {instanceID: 12608}
+      Script: {instanceID: 12524}
     - Class: 114
-      Script: {instanceID: 12636}
+      Script: {instanceID: 12616}
     - Class: 114
-      Script: {instanceID: 12738}
+      Script: {instanceID: 12644}
     - Class: 114
-      Script: {instanceID: 12748}
+      Script: {instanceID: 12746}
     - Class: 114
-      Script: {instanceID: 13270}
+      Script: {instanceID: 13078}
     - Class: 114
-      Script: {instanceID: 13420}
+      Script: {instanceID: 13278}
     - Class: 114
-      Script: {instanceID: 13694}
+      Script: {instanceID: 13428}
     - Class: 114
-      Script: {instanceID: 13780}
+      Script: {instanceID: 13528}
     - Class: 114
-      Script: {instanceID: 13852}
+      Script: {instanceID: 13704}
+    - Class: 114
+      Script: {instanceID: 13790}
+    - Class: 114
+      Script: {instanceID: 13862}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -129,6 +133,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: Text
+  - hash:
+      serializedVersion: 2
+      Hash: 5ad4aa237d47ac2bab17bacb672edf7a
+    assemblyName: UnityEngine.UI.dll
+    namespaceName: UnityEngine.UI
+    className: VerticalLayoutGroup
   - hash:
       serializedVersion: 2
       Hash: caa533b001ae39b864ba8425019e2268
@@ -485,7 +495,7 @@ ScriptsOnlyBuild:
     className: TextContainer
   - hash:
       serializedVersion: 2
-      Hash: fb413ef3051353eb7ecaa32b2c53cc02
+      Hash: ca5ccd74a5238931ea360e604c324930
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: TrainerController
@@ -507,12 +517,6 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: SkillLogEntry
-  - hash:
-      serializedVersion: 2
-      Hash: 5ad4aa237d47ac2bab17bacb672edf7a
-    assemblyName: UnityEngine.UI.dll
-    namespaceName: UnityEngine.UI
-    className: VerticalLayoutGroup
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -573,6 +577,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: TimelineAsset
+  - hash:
+      serializedVersion: 2
+      Hash: 32b717c52404bb9f00f0fc4cb184f273
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Tooltip
   - hash:
       serializedVersion: 2
       Hash: 24c74cc0d527a06113f2b967042769f0
@@ -651,6 +661,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TMP_StyleSheet
+  - hash:
+      serializedVersion: 2
+      Hash: 3015a0bac56db37eeb05aeea7fe3588b
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: TooltipController
   - hash:
       serializedVersion: 2
       Hash: e6ae40841db498b6e673877ac45ad208
@@ -767,7 +783,7 @@ ScriptsOnlyBuild:
     className: ToggleGroup
   - hash:
       serializedVersion: 2
-      Hash: 1670fce6b9b2f3b64e0f2e3174fd075e
+      Hash: 7138766efb48d9880ae19b9e1e67ba11
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: SkillIcon
@@ -780,4 +796,4 @@ ScriptsOnlyBuild:
   platform: 20
   scenePathNames:
   - Assets/Scenes/SampleScene.unity
-  playerPath: D:/Unity Dev/FFXIVRotationTrainer/Builds/0.1a/WebGL
+  playerPath: D:/Unity Dev/FFXIVRotationTrainer/Builds/0.1.2a/WebGL
