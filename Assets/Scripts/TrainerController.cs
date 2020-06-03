@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -36,6 +37,7 @@ public class TrainerController : MonoBehaviour
     [SerializeField] private GameObject _skillLogPrefab;
     [SerializeField] private GameObject _skillLogPanel;
     [SerializeField] private ScrollRect _skillLogPanelScroll;
+    [SerializeField] private Text _debugText;
 
     private static TrainerController _instance;
 
@@ -50,7 +52,28 @@ public class TrainerController : MonoBehaviour
             _instance = this;
         }
 
-        Skills = XmlParser<Skill>.ParseListFromXmlFile(SkillsFilename);
+        try {
+            var textAsset = (TextAsset)Resources.Load("Xml/" + /*JOB*/ "GNB");
+            var text = textAsset.text;
+            Skills = XmlParser<Skill>.ParseXmlFromText(text);
+            //Skills = XmlParser<Skill>.ParseListFromXmlFile(SkillsFilename);
+            if (Skills.Count < 1)
+            {
+                _debugText.text = _debugText.text + System.Environment.NewLine + "no skills";
+                Skills.Add(new Skill { Name = "Keen Edge", Job = JobType.GNB, Level = 1, Description = "Delivers an attack with a potency of 200.", RecastTime = 2.5f, CastTime = 0, TargetType = TargetType.Enemy, IconName = "Keen_Edge", SkillType = SkillType.Weaponskill });
+            }
+            else
+            {
+                foreach (var skill in Skills)
+                {
+                    _debugText.text = _debugText.text + System.Environment.NewLine + "skill: " + skill.Name;
+                }
+            }
+        }
+        catch (Exception e)
+        {
+            _debugText.text = "ERROR! " + e.Message + System.Environment.NewLine + e.StackTrace;
+        }
         //Skills = XmlParser<SkillsList>.ParseObjectFromXmlFile(SkillsFilename);
     }
 

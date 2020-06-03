@@ -36,6 +36,8 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.Scrollbar
     - UnityEngine.UI.Text
     - UnityEngine.UI.VerticalLayoutGroup
+    com.unity.multiplayer-hlapi.Runtime.dll:
+    - UnityEngine.Networking.NetworkCallbacks
   sceneClasses:
     Assets/Scenes/SampleScene.unity:
     - Class: 1
@@ -483,7 +485,7 @@ ScriptsOnlyBuild:
     className: TextContainer
   - hash:
       serializedVersion: 2
-      Hash: 5e678dea365e1c55baec2db9afcb2170
+      Hash: fb413ef3051353eb7ecaa32b2c53cc02
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: TrainerController
