@@ -65,6 +65,7 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\DebuggingStuff.cs" />
     <Compile Include="Assets\Scripts\DragDrop.cs" />
+    <Compile Include="Assets\Scripts\DraggableHandle.cs" />
     <Compile Include="Assets\Scripts\Helpers.cs" />
     <Compile Include="Assets\Scripts\Hotbar.cs" />
     <Compile Include="Assets\Scripts\HotbarSlot.cs" />

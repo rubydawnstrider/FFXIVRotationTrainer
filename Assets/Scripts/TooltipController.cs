@@ -10,6 +10,7 @@ public class TooltipController : MonoBehaviour
     public static TooltipController Instance() { return _instance; }
 
     private Dictionary<string, GameObject> _tooltips = new Dictionary<string, GameObject>();
+    private bool _preventTooltips;
 
     // Start is called before the first frame update
     void Awake()
@@ -29,7 +30,7 @@ public class TooltipController : MonoBehaviour
     }
     public void ShowTooltip(string name)
     {
-        if(_tooltips.TryGetValue(name, out var tt))
+        if(!_preventTooltips && _tooltips.TryGetValue(name, out var tt))
         {
             tt.SetActive(true);
         }
@@ -37,9 +38,24 @@ public class TooltipController : MonoBehaviour
 
     public void HideTooltip(string name)
     {
-        if (_tooltips.TryGetValue(name, out var tt))
+        if (!_preventTooltips && _tooltips.TryGetValue(name, out var tt))
         {
             tt.SetActive(false);
+        }
+    }
+
+    public void SetPreventTooltips(bool preventTooltips)
+    {
+        _preventTooltips = preventTooltips;
+        if(_preventTooltips)
+        {
+            foreach(var kv in _tooltips)
+            {
+                if (kv.Value.activeInHierarchy)
+                {
+                    kv.Value.SetActive(false);
+                }
+            }
         }
     }
 }

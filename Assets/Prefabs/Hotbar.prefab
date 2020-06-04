@@ -622,7 +622,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 0.5283019, g: 0.5283019, b: 0.5283019, a: 0}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -1251,6 +1251,7 @@ GameObject:
   - component: {fileID: 373147930262688645}
   - component: {fileID: 373147930262688698}
   - component: {fileID: 6529752445120357442}
+  - component: {fileID: 2087388886800706550}
   m_Layer: 5
   m_Name: HotbarLabel
   m_TagString: Untagged
@@ -1275,7 +1276,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -282.43, y: 0}
+  m_AnchoredPosition: {x: -276, y: 0}
   m_SizeDelta: {x: 28.752155, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &373147930262688645
@@ -1334,6 +1335,19 @@ MonoBehaviour:
   m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
   m_EffectDistance: {x: 1, y: -1}
   m_UseGraphicAlpha: 1
+--- !u!114 &2087388886800706550
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 373147930262688696}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 629527c0efc8008418516eb677c40fb2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _rectTransform: {fileID: 373147930372954384}
 --- !u!1 &373147930469993207
 GameObject:
   m_ObjectHideFlags: 0

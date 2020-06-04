@@ -10,7 +10,7 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, I
     private Vector2 _originalAnchor;
     private RectTransform _rectTransform;
     private CanvasGroup _canvasGroup;
-    private bool _returnToStartOnDrop = true;
+    [SerializeField] private bool _returnToStartOnDrop = true;
 
     public void SetReturnToStartOnDrop(bool returnToStartOnDrop)
     {
@@ -58,13 +58,19 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, I
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        _canvasGroup.blocksRaycasts = true;
-        _canvasGroup.alpha = 1;
+        if (_canvasGroup)
+        {
+            _canvasGroup.blocksRaycasts = true;
+            _canvasGroup.alpha = 1;
+        }
     }
 
     public void OnBeginDrag(PointerEventData eventData)
     {
-        _canvasGroup.blocksRaycasts = false;
-        _canvasGroup.alpha = 0.9f;
+        if (_canvasGroup)
+        {
+            _canvasGroup.blocksRaycasts = false;
+            _canvasGroup.alpha = 0.9f;
+        }
     }
 }
