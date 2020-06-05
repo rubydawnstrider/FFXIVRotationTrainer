@@ -32,8 +32,11 @@ public class TrainerController : MonoBehaviour
     [SerializeField] private GameObject _skillContainer;
     [SerializeField] private Canvas _canvas;
     [SerializeField] private GameObject _skillIconPrefab;
+    [SerializeField] private GameObject _skillDisplayEntryPrefab;
     [SerializeField] private GameObject _skillLogPrefab;
     [SerializeField] private GameObject _skillLogPanel;
+    [SerializeField] private GameObject _skillDisplayPanel;
+
     [SerializeField] private ScrollRect _skillLogPanelScroll;
     [SerializeField] private Text _debugText;
 
@@ -85,16 +88,9 @@ public class TrainerController : MonoBehaviour
         var j = 3;
         foreach (var s in Skills)
         {
-            var skill = Instantiate(_skillIconPrefab);
-            skill.name = s.Name;
-            skill.transform.SetParent(_canvas.transform, false);
-            skill.transform.position = new Vector2(i++, j);
-            skill.GetComponent<SkillIcon>().Initialize(s);
-            if (i > 6)
-            {
-                i = -7;
-                j--;
-            }
+            var skillDisplay = Instantiate(_skillDisplayEntryPrefab);
+            skillDisplay.GetComponent<SkillDisplayEntry>().Initialize(_skillIconPrefab, s);
+            skillDisplay.transform.SetParent(_skillDisplayPanel.transform);
         }
 
         i = 0;

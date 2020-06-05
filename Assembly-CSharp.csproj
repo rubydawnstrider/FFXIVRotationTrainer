@@ -68,12 +68,14 @@
     <Compile Include="Assets\Scripts\DraggableHandle.cs" />
     <Compile Include="Assets\Scripts\Helpers.cs" />
     <Compile Include="Assets\Scripts\Hotbar.cs" />
+    <Compile Include="Assets\Scripts\HotbarLayout.cs" />
     <Compile Include="Assets\Scripts\HotbarSlot.cs" />
     <Compile Include="Assets\Scripts\InputController.cs" />
     <Compile Include="Assets\Scripts\JobType.cs" />
     <Compile Include="Assets\Scripts\KeyModifier.cs" />
     <Compile Include="Assets\Scripts\Keybind.cs" />
     <Compile Include="Assets\Scripts\Skill.cs" />
+    <Compile Include="Assets\Scripts\SkillDisplayEntry.cs" />
     <Compile Include="Assets\Scripts\SkillIcon.cs" />
     <Compile Include="Assets\Scripts\SkillLogEntry.cs" />
     <Compile Include="Assets\Scripts\SkillType.cs" />

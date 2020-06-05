@@ -6,6 +6,7 @@ using UnityEngine.EventSystems;
 
 public class DragDrop : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IBeginDragHandler, IEndDragHandler, IDragHandler
 {
+    private Transform _originalParent;
     private Vector2 _originalPoint;
     private Vector2 _originalAnchor;
     private RectTransform _rectTransform;
@@ -30,6 +31,8 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, I
     {
         _originalPoint = _rectTransform.position;
         _originalAnchor = _rectTransform.anchoredPosition;
+        _originalParent = _rectTransform.parent.transform;
+        _rectTransform.SetParent(TrainerController.Instance().GetCanvas().transform);
     }
 
     public void OnPointerUp(PointerEventData eventData)
@@ -37,7 +40,7 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, I
         if (_returnToStartOnDrop)
         {
             // todo check if it ended in the middle of nowhere and originated from a hotbarslot
-
+            _rectTransform.SetParent(_originalParent);
             _rectTransform.anchoredPosition = _originalAnchor;
             _rectTransform.position = _originalPoint;
         }

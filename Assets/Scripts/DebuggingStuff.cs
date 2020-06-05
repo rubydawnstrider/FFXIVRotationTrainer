@@ -15,7 +15,7 @@ public class DebuggingStuff : MonoBehaviour
         }
         else
         {
-            _hotbar1.Initalize(columns, 12 / columns, 40, new List<GameObject>());
+            _hotbar1.Initialize(columns, 12 / columns, 40, new List<GameObject>());
         }
     }
 }

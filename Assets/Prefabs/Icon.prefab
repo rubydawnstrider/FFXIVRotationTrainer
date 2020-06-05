@@ -36,11 +36,11 @@ RectTransform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 40, y: 40}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 0, y: 1}
 --- !u!222 &4097801013719668166
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -133,8 +133,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71adc9df9fb7d324797327f51920217e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _tooltipPrefab: {fileID: 300709608244436195, guid: 37a433335999b7d44b488844ed09be89,
-    type: 3}
   _image: {fileID: 7616734921164711147}
 --- !u!225 &5135663255217947567
 CanvasGroup:
@@ -160,3 +158,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91c9993dd8d623a49814bf0bb27c5a6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _returnToStartOnDrop: 1

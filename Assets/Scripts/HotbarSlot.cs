@@ -30,20 +30,18 @@ public class HotbarSlot : MonoBehaviour, IDropHandler
 
             var tmp = eventData.pointerDrag.GetComponent<Button>();
 
+            var anchorOffsetV2 = new Vector2(-20, 20);
+            var anchorOffsetV3 = new Vector3(-20, 20, 0);
+
             //todo if dragged skill coming from another hotbarslot, swap them? if hotbarskill is set already
             if (ActionButton == null) // hotbarslot is empty. just move here
             {
-                dragRect.anchoredPosition = rect.anchoredPosition;
-                dragRect.position = rect.position; ;
+                dragRect.anchoredPosition = rect.anchoredPosition + anchorOffsetV2;
+                dragRect.position = rect.position + anchorOffsetV3; 
                 dragRect.parent = rect;
 
                 if (tmp != null)
                 {
-                    var p = eventData.pointerDrag;
-                    var pn = p.name;
-                    var p2 = p.transform.parent;
-                    var p2n = p2.name;
-                    var p3 = p2.GetComponent<HotbarSlot>();
                     if (dragParentDropSlot != null)
                     {
                         dragParentDropSlot.ClearAction();
@@ -56,12 +54,12 @@ public class HotbarSlot : MonoBehaviour, IDropHandler
             {
                 if (eventData.pointerDrag.transform.parent.GetComponent<HotbarSlot>() != null)
                 {
-                    var tmpPos = eventData.pointerDrag.transform.parent.GetComponent<RectTransform>().position;
-                    var tmpAnchor = eventData.pointerDrag.transform.parent.GetComponent<RectTransform>().anchoredPosition;
+                    var tmpPos = eventData.pointerDrag.transform.parent.GetComponent<RectTransform>().position + anchorOffsetV3;
+                    var tmpAnchor = eventData.pointerDrag.transform.parent.GetComponent<RectTransform>().anchoredPosition + anchorOffsetV2;
                     var tmpParent = eventData.pointerDrag.transform.parent.GetComponent<RectTransform>();
 
-                    dragRect.anchoredPosition = rect.anchoredPosition;
-                    dragRect.position = rect.position; ;
+                    dragRect.anchoredPosition = rect.anchoredPosition + anchorOffsetV2;
+                    dragRect.position = rect.position +anchorOffsetV3;
                     dragRect.parent = rect;
 
                     ActionButton.GetComponent<RectTransform>().anchoredPosition = tmpAnchor;

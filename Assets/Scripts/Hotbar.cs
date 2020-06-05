@@ -35,7 +35,7 @@ public class Hotbar : MonoBehaviour
         return _isInitialized;
     }
 
-    public void Initalize(int columns, int rows, float slotSize, IList<GameObject> slots)
+    public void Initialize(int columns, int rows, float slotSize, IList<GameObject> slots)
     {
         if (_isInitialized)
         {
@@ -75,9 +75,9 @@ public class Hotbar : MonoBehaviour
     }
     
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        
+        Initialize(12, 1, 40, new List<GameObject>());
     }
 
     // Update is called once per frame
@@ -194,5 +194,33 @@ public class Hotbar : MonoBehaviour
             Slot11.GetComponent<HotbarSlot>(),
             Slot12.GetComponent<HotbarSlot>()
         };
+    }
+
+    public void ChangeColumns(int columns)
+    {
+        var rows = 12 / columns;
+        SetRowsAndColumns(columns, rows);
+        //switch (layout)
+        //{
+        //    case HotbarLayout.TwelveByOne:
+        //        SetRowsAndColumns(12, 1);
+        //        break;
+        //    case HotbarLayout.SixByTwo:
+        //        SetRowsAndColumns(6, 2);
+        //        break;
+        //    case HotbarLayout.FourByThree:
+        //        SetRowsAndColumns(4, 3);
+        //        break;
+        //    case HotbarLayout.ThreeByFour:
+        //        SetRowsAndColumns(3, 4);
+        //        break;
+        //    case HotbarLayout.TwoBySix:
+        //        SetRowsAndColumns(2, 6);
+        //        break;
+        //    case HotbarLayout.OneByTwelve:
+        //        SetRowsAndColumns(1, 12);
+        //        break;
+
+        //}
     }
 }
