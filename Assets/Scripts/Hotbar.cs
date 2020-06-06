@@ -171,10 +171,8 @@ public class Hotbar : MonoBehaviour
                         Slot12.GetComponent<RectTransform>().anchoredPosition = pos;
                         break;
                 }
-
             }
         }
-
     }
 
     public IList<HotbarSlot> GetHotbarSlots()
@@ -200,27 +198,5 @@ public class Hotbar : MonoBehaviour
     {
         var rows = 12 / columns;
         SetRowsAndColumns(columns, rows);
-        //switch (layout)
-        //{
-        //    case HotbarLayout.TwelveByOne:
-        //        SetRowsAndColumns(12, 1);
-        //        break;
-        //    case HotbarLayout.SixByTwo:
-        //        SetRowsAndColumns(6, 2);
-        //        break;
-        //    case HotbarLayout.FourByThree:
-        //        SetRowsAndColumns(4, 3);
-        //        break;
-        //    case HotbarLayout.ThreeByFour:
-        //        SetRowsAndColumns(3, 4);
-        //        break;
-        //    case HotbarLayout.TwoBySix:
-        //        SetRowsAndColumns(2, 6);
-        //        break;
-        //    case HotbarLayout.OneByTwelve:
-        //        SetRowsAndColumns(1, 12);
-        //        break;
-
-        //}
     }
 }

@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using System.Drawing;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.EventSystems;
 
 public class DragDrop : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IBeginDragHandler, IEndDragHandler, IDragHandler
@@ -24,7 +21,7 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, I
 
     public void OnDrag(PointerEventData eventData)
     {
-        _rectTransform.anchoredPosition += eventData.delta / TrainerController.Instance().GetCanvas().scaleFactor;
+        _rectTransform.anchoredPosition += eventData.delta / TrainerController.Instance.GetCanvas().scaleFactor;
     }
 
     public void OnPointerDown(PointerEventData eventData)
@@ -32,7 +29,7 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, I
         _originalPoint = _rectTransform.position;
         _originalAnchor = _rectTransform.anchoredPosition;
         _originalParent = _rectTransform.parent.transform;
-        _rectTransform.SetParent(TrainerController.Instance().GetCanvas().transform);
+        _rectTransform.SetParent(TrainerController.Instance.GetCanvas().transform);
     }
 
     public void OnPointerUp(PointerEventData eventData)

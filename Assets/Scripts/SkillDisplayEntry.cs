@@ -15,7 +15,22 @@ public class SkillDisplayEntry : MonoBehaviour
         _skillButton.name = skill.Name;
         _skillButton.transform.SetParent(transform);
         _skillButton.GetComponent<RectTransform>().anchoredPosition = new Vector2(2, -2);
-        _skillButton.GetComponent<SkillIcon>().Initialize(skill);
+        if (skill.SkillType == SkillType.Ability)
+        {
+            _skillButton.AddComponent<AbilitySkill>();
+            _skillButton.GetComponent<AbilitySkill>().Initialize(skill);
+        }
+        else if (skill.SkillType == SkillType.Weaponskill)
+        {
+            _skillButton.AddComponent<WeaponSkill>();
+            _skillButton.GetComponent<WeaponSkill>().Initialize(skill);
+        }
+        else if (skill.SkillType == SkillType.Spell)
+        {
+            _skillButton.AddComponent<SpellSkill>();
+            _skillButton.GetComponent<SpellSkill>().Initialize(skill);
+        }
+        //_skillButton.GetComponent<SkillIcon>().Initialize(skill);
 
         _skillNameText.text = skill.Name;
         _skillTypeText.text = skill.SkillType.ToString();

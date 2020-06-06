@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
@@ -21,18 +19,18 @@ public class SkillIcon : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
         var sprite = Resources.Load<Sprite>(path);
 
         _image.sprite = sprite;
-        TooltipController.Instance().CreateTooltip(skill, sprite);
+        TooltipController.Instance.CreateTooltip(skill, sprite);
     }
 
     public Skill GetSkill() { return _skill; }
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        TooltipController.Instance().ShowTooltip(_skill.Name);
+        TooltipController.Instance.ShowTooltip(_skill.Name);
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        TooltipController.Instance().HideTooltip(_skill.Name);
+        TooltipController.Instance.HideTooltip(_skill.Name);
     }
 }

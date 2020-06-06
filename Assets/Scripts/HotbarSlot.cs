@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -11,7 +9,7 @@ public class HotbarSlot : MonoBehaviour, IDropHandler
     [SerializeField] private Text HotKeyText;
     [SerializeField] private Text HotKeyModifierText;
     [SerializeField] private Text HotKeyShiftModifierText;
-    [SerializeField] private Button ActionButton;
+    [SerializeField] private GameObject ActionButton;
     private bool _hasAction;
     private Keybind _keybind;
 
@@ -28,7 +26,7 @@ public class HotbarSlot : MonoBehaviour, IDropHandler
             var dragRect = eventData.pointerDrag.GetComponent<RectTransform>();
             var dragParentDropSlot = eventData.pointerDrag.transform.parent.GetComponent<HotbarSlot>();
 
-            var tmp = eventData.pointerDrag.GetComponent<Button>();
+            var tmp = eventData.pointerDrag;
 
             var anchorOffsetV2 = new Vector2(-20, 20);
             var anchorOffsetV3 = new Vector3(-20, 20, 0);
@@ -47,6 +45,7 @@ public class HotbarSlot : MonoBehaviour, IDropHandler
                         dragParentDropSlot.ClearAction();
                     }
                     SetAction(tmp);
+                    tmp.GetComponent<SkillAction>().AddToHotbar();
                     tmp.transform.SetAsFirstSibling();
                 }
             }
@@ -69,6 +68,7 @@ public class HotbarSlot : MonoBehaviour, IDropHandler
                     dragParentDropSlot.SetAction(ActionButton);
                     ActionButton.transform.SetAsFirstSibling();
                     SetAction(tmp);
+
                     tmp.transform.SetAsFirstSibling();
                 }
                 else
@@ -129,14 +129,15 @@ public class HotbarSlot : MonoBehaviour, IDropHandler
     {
         SetAction(null);
     }
-    public void SetAction(Button action)
+    public void SetAction(GameObject action)
     {
         _hasAction = action != null;
         ActionButton = action;
     }
     public Skill GetAction()
     {
-        return ActionButton.GetComponent<SkillIcon>().GetSkill();
+        return ActionButton.GetComponent<SkillAction>().Skill;
+        //return ActionButton.GetComponent<SkillIcon>().GetSkill();
     }
     public Keybind GetKeybind()
     {

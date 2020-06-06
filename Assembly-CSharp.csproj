@@ -63,28 +63,37 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\Contollers\EventController.cs" />
+    <Compile Include="Assets\Scripts\Contollers\InputController.cs" />
+    <Compile Include="Assets\Scripts\Contollers\TooltipController.cs" />
+    <Compile Include="Assets\Scripts\Contollers\TrainerController.cs" />
     <Compile Include="Assets\Scripts\DebuggingStuff.cs" />
     <Compile Include="Assets\Scripts\DragDrop.cs" />
     <Compile Include="Assets\Scripts\DraggableHandle.cs" />
-    <Compile Include="Assets\Scripts\Helpers.cs" />
+    <Compile Include="Assets\Scripts\Helpers\Helpers.cs" />
+    <Compile Include="Assets\Scripts\Helpers\XmlParser.cs" />
     <Compile Include="Assets\Scripts\Hotbar.cs" />
     <Compile Include="Assets\Scripts\HotbarLayout.cs" />
     <Compile Include="Assets\Scripts\HotbarSlot.cs" />
-    <Compile Include="Assets\Scripts\InputController.cs" />
     <Compile Include="Assets\Scripts\JobType.cs" />
     <Compile Include="Assets\Scripts\KeyModifier.cs" />
     <Compile Include="Assets\Scripts\Keybind.cs" />
     <Compile Include="Assets\Scripts\Skill.cs" />
+    <Compile Include="Assets\Scripts\SkillActions\AbilitySkill.cs" />
+    <Compile Include="Assets\Scripts\SkillActions\SkillAction.cs" />
+    <Compile Include="Assets\Scripts\SkillActions\SpellSkill.cs" />
+    <Compile Include="Assets\Scripts\SkillActions\WeaponSkill.cs" />
     <Compile Include="Assets\Scripts\SkillDisplayEntry.cs" />
     <Compile Include="Assets\Scripts\SkillIcon.cs" />
     <Compile Include="Assets\Scripts\SkillLogEntry.cs" />
     <Compile Include="Assets\Scripts\SkillType.cs" />
     <Compile Include="Assets\Scripts\TargetType.cs" />
+    <Compile Include="Assets\Scripts\Timers\ActionTimer.cs" />
+    <Compile Include="Assets\Scripts\Timers\TrainerGcdRecastTimer.cs" />
+    <Compile Include="Assets\Scripts\Timers\TrainerLongRecastTimer.cs" />
+    <Compile Include="Assets\Scripts\Timers\TrainerTimer.cs" />
     <Compile Include="Assets\Scripts\Tooltip.cs" />
-    <Compile Include="Assets\Scripts\TooltipController.cs" />
-    <Compile Include="Assets\Scripts\TrainerController.cs" />
     <Compile Include="Assets\Scripts\UIEelementDraggable.cs" />
-    <Compile Include="Assets\Scripts\XmlParser.cs" />
     <None Include="Assets\Resources\Xml\GNB.xml" />
     <Reference Include="UnityEngine">
       <HintPath>D:/Programs/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>

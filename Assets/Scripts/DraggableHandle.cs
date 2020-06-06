@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.EventSystems;
 
 public class DraggableHandle : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IDragHandler
@@ -10,17 +8,17 @@ public class DraggableHandle : MonoBehaviour, IPointerDownHandler, IPointerUpHan
     
     public void OnDrag(PointerEventData eventData)
     {
-        _rectTransform.anchoredPosition = _originalPoint += eventData.delta / TrainerController.Instance().GetCanvas().scaleFactor;
+        _rectTransform.anchoredPosition = _originalPoint += eventData.delta / TrainerController.Instance.GetCanvas().scaleFactor;
     }
 
     public void OnPointerDown(PointerEventData eventData)
     {
         _originalPoint = _rectTransform.anchoredPosition;
-        TooltipController.Instance().SetPreventTooltips(true);
+        TooltipController.Instance.SetPreventTooltips(true);
     }
 
     public void OnPointerUp(PointerEventData eventData)
     {
-        TooltipController.Instance().SetPreventTooltips(false);
+        TooltipController.Instance.SetPreventTooltips(false);
     }
 }
