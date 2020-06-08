@@ -62,4 +62,12 @@ public class TooltipController : MonoBehaviour
             }
         }
     }
+
+    public void UpdateTooptipRecastTime(float adjustedRecastRatio)
+    {
+        foreach(var tt in _tooltips.Values)
+        {
+            tt.GetComponent<Tooltip>().UpdateRecastTime(adjustedRecastRatio);
+        }
+    }
 }

@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class Tooltip : MonoBehaviour
 {
     [SerializeField] private Text SkillName;
-    [SerializeField] private Text SkillType;
+    [SerializeField] private Text SkillTypeText;
     [SerializeField] private Text CastTime;
     [SerializeField] private Text RecastTime;
     [SerializeField] private Transform AcquiredContainer;
@@ -16,7 +16,7 @@ public class Tooltip : MonoBehaviour
     public void Initialize(Skill skill, Sprite icon)
     {
         SkillName.text = skill.Name;
-        SkillType.text = skill.SkillType.ToString();
+        SkillTypeText.text = skill.SkillType.ToString();
         if (skill.CastTime == 0)
         {
             CastTime.text = "Instant";
@@ -39,5 +39,14 @@ public class Tooltip : MonoBehaviour
         AcquiredContainer.position = new Vector2(AcquiredContainer.position.x, AcquiredContainer.position.y - adjust);
         var rectTransform = GetComponent<RectTransform>();
         rectTransform.sizeDelta = new Vector2(rectTransform.sizeDelta.x, rectTransform.sizeDelta.y + adjust);
+    }
+
+    public void UpdateRecastTime(float adjustedRatio)
+    {
+        if (SkillTypeText.text == SkillType.Weaponskill.ToString() || SkillTypeText.text == SkillType.Spell.ToString())
+        {
+            var text = RecastTime.text.Substring(0, RecastTime.text.Length - 1); // trim the ending 's'
+            RecastTime.text = (float.Parse(text) * adjustedRatio).ToString("F2") + "s";
+        }
     }
 }

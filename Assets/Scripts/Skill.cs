@@ -10,6 +10,7 @@ public class Skill
     public int Level { get; set; }
     public string Description { get; set; }
     public float RecastTime { get; set; }
+    public float AdjustedRecastTime { get; set; }
     public float CastTime { get; set; }
     public TargetType TargetType { get; set; }
     public string IconName { get; set; }

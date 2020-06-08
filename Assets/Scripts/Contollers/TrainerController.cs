@@ -1,6 +1,8 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 /*************************************************************************
@@ -34,6 +36,7 @@ public class TrainerController : MonoBehaviour
     [SerializeField] private GameObject _skillLogPrefab;
     [SerializeField] private GameObject _skillLogPanel;
     [SerializeField] private GameObject _skillDisplayPanel;
+    [SerializeField] private InputField _gcdValueInput;
 
     [SerializeField] private ScrollRect _skillLogPanelScroll;
     [SerializeField] private Text _debugText;
@@ -42,14 +45,15 @@ public class TrainerController : MonoBehaviour
     [SerializeField] private Image _timerInnerImage;
     [SerializeField] private Image _timerGcdWithRecastImage;
     [SerializeField] private Text _recastText;
-    public Image TimerOuterImage {  get { return _timerOuterImage; } }
-    public Image TimerInnerImage {  get { return _timerInnerImage; } }
-    public Image TimerGcdWithRecastImage {  get { return _timerGcdWithRecastImage; } }
-    public Text RecastText {  get { return _recastText; } }
+    public Image TimerOuterImage { get { return _timerOuterImage; } }
+    public Image TimerInnerImage { get { return _timerInnerImage; } }
+    public Image TimerGcdWithRecastImage { get { return _timerGcdWithRecastImage; } }
+    public Text RecastText { get { return _recastText; } }
 
     public static TrainerController Instance { get; private set; }
 
     public static float GcdTime = 2.5f;
+    private const float GCD_DEFAULT = 2.5f;
 
     private void Awake()
     {
@@ -63,6 +67,52 @@ public class TrainerController : MonoBehaviour
         {
             _debugText.text = _debugText.text + System.Environment.NewLine + "skill: " + skill.Name;
         }
+        _gcdValueInput.onEndEdit.AddListener(delegate { GcdValueUpdate(); });
+    }
+
+    void GcdValueUpdate()
+    {
+        var newTextValue = _gcdValueInput.text;
+        if (string.IsNullOrEmpty(newTextValue))
+        {
+            newTextValue = GCD_DEFAULT.ToString("F2");
+        }
+        var newValue = float.Parse(newTextValue); // todo update all weapskils and spells recast time
+        var adjustedRatio = newValue / GcdTime;
+        GcdTime = newValue;
+        _gcdValueInput.text = GcdTime.ToString("F2");
+
+        UpdateGcdValueOnSkills(adjustedRatio);
+    }
+
+    private void UpdateGcdValueOnSkills(float adjustedRatio)
+    {
+        var hotbars = _canvas.GetComponents<Hotbar>();
+        foreach(var hb in hotbars)
+        {
+            var hbSlots = hb.GetHotbarSlots();
+            foreach(var slot in hbSlots)
+            {
+                slot.UpdateSkillRecastTime(adjustedRatio);
+            }
+        }
+
+        var skillDisplays = _skillDisplayPanel.GetComponents<SkillDisplayEntry>();
+        foreach(var sd in skillDisplays)
+        {
+            var weapSkill = sd.GetComponentsInChildren<WeaponSkill>();
+            foreach(var ws in weapSkill)
+            {
+                ws.UpdateSkillRecast(adjustedRatio);
+            }
+            var spellSkill = sd.GetComponentsInChildren<SpellSkill>();
+            foreach(var ss in spellSkill)
+            {
+                ss.UpdateSkillRecast(adjustedRatio);
+            }
+        }
+
+        TooltipController.Instance.UpdateTooptipRecastTime(adjustedRatio);
     }
 
     public Canvas GetCanvas()
@@ -99,5 +149,11 @@ public class TrainerController : MonoBehaviour
     {
         yield return new WaitForEndOfFrame();
         _skillLogPanelScroll.verticalNormalizedPosition = 1f;
+    }
+
+    public void ResetGcdValue()
+    {
+        _gcdValueInput.text = GCD_DEFAULT.ToString("F2");
+        GcdValueUpdate();
     }
 }

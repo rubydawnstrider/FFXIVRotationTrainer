@@ -34,14 +34,14 @@ public class WeaponSkill : SkillAction
         {
             TrainerController.Instance.AddSkillLogEntry(Skill.Name, Icon.sprite);
             _recastOkay = false;
-            _recastTimer.StartTiming(Skill.RecastTime, EnableRecast);
+            _recastTimer.StartTiming(Skill.AdjustedRecastTime, EnableRecast);
         }
     }
     protected override void StartGcdCountdown(string skillName)
     {
         if (_gcdOkay)
         {
-            if (Mathf.Abs(TrainerController.GcdTime - Skill.RecastTime) <= 0.01f && Skill.Name == skillName)
+            if (Mathf.Abs(TrainerController.GcdTime - Skill.AdjustedRecastTime) <= 0.01f && Skill.Name == skillName)
             {
                 TrainerController.Instance.AddSkillLogEntry(Skill.Name, Icon.sprite);
             }
@@ -66,7 +66,7 @@ public class WeaponSkill : SkillAction
         if (_recastOkay && _isOnHotbar)
         {
             EventController.TriggerEvent("GCD", Skill.Name);
-            if (Mathf.Abs(TrainerController.GcdTime - Skill.RecastTime) > 0.01f)
+            if (Mathf.Abs(TrainerController.GcdTime - Skill.AdjustedRecastTime) > 0.01f)
             {
                 EventController.TriggerEvent(Skill.Name, Skill.Name);
             }
@@ -80,4 +80,8 @@ public class WeaponSkill : SkillAction
         EventController.StartListening("GCD", StartGcdCountdown);
     }
 
+    public void UpdateSkillRecast(float adjustedRecastTime)
+    {
+        Skill.AdjustedRecastTime = Skill.RecastTime * adjustedRecastTime;
+    }
 }

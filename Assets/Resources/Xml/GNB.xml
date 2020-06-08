@@ -6,7 +6,7 @@
     <Level>1</Level>
     <Description>Delivers an attack with a potency of 200.</Description>
     <RecastTime>2.5</RecastTime>
-    <CastTime>1</CastTime>
+    <CastTime>0</CastTime>
     <TargetType>Enemy</TargetType>
     <IconName>Keen_Edge</IconName>
 	<SkillType>Weaponskill</SkillType>
@@ -18,7 +18,7 @@
     <Description>Increases damage dealt by 20%.
 Duration: 20s </Description>
     <RecastTime>60</RecastTime>
-    <CastTime>2.3</CastTime>
+    <CastTime>0</CastTime>
     <TargetType>Self</TargetType>
     <IconName>No_Mercy</IconName>
 	<SkillType>Ability</SkillType>
@@ -35,7 +35,7 @@ Cure Potency: 150
 Combo Bonus: Creates a barrier which nullifies damage equaling HP restored
 Duration: 10s </Description>
     <RecastTime>2.5</RecastTime>
-    <CastTime>4.56</CastTime>
+    <CastTime>0</CastTime>
     <TargetType>Enemy</TargetType>
 	<ComboAction>Keen Edge</ComboAction>
     <IconName>Brutal_Shell</IconName>

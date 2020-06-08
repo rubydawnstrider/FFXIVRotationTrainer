@@ -137,8 +137,26 @@ public class HotbarSlot : MonoBehaviour, IDropHandler
     public Skill GetAction()
     {
         return ActionButton.GetComponent<SkillAction>().Skill;
-        //return ActionButton.GetComponent<SkillIcon>().GetSkill();
     }
+
+    public void UpdateSkillRecastTime(float adjustedRecastTime)
+    {
+        if (!HasAction())
+        {
+            return;
+        }
+
+        var skillType = GetAction().SkillType;
+        if (skillType == SkillType.Weaponskill) 
+        {
+            ActionButton.GetComponent<WeaponSkill>().UpdateSkillRecast(adjustedRecastTime);
+        }
+        else if (skillType == SkillType.Spell)
+        {
+            ActionButton.GetComponent<SpellSkill>().UpdateSkillRecast(adjustedRecastTime);
+        }
+    }
+
     public Keybind GetKeybind()
     {
         if (_keybind == null)
